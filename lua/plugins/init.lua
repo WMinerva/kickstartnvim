@@ -5,20 +5,26 @@
 return {
     "nvim-lua/plenary.nvim",
     {
-        "NvChad/base46",
-        lazy = false,
+        "nvchad/ui",
+        config = function()
+            require("nvchad")
+            -- vim.o.statusline = ' '
+        end,
+    },
+    {
+        "nvchad/base46",
+        lazy = true,
         build = function()
             require("base46").load_all_highlights()
         end,
     },
-    {
-        "NvChad/ui",
-        lazy = false,
-        -- config = function()
-        --   require 'nvchad'
-        --   -- vim.o.statusline = ' '
-        -- end,
-    },
+    { "nvchad/volt",  lazy = true },
+    { "nvchad/minty", lazy = true },
+    -- {
+    --     "nvchad/menu",
+    --     lazy = true,
+    --     opts = {}
+    -- },
     -- dependency for ui
     {
         "nvim-tree/nvim-web-devicons",
@@ -31,23 +37,17 @@ return {
         end,
     },
     {
-        "NvChad/nvim-colorizer.lua",
-        event = "User FilePost",
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        build = ":Copilot auth",
         opts = {
-            user_default_options = {
-                names = false,
-            },
+            suggestion = { enabled = false },
+            panel = { enabled = false },
             filetypes = {
-                "*",
-                "!lazy",
+                markdown = true,
+                help = true,
             },
         },
-        config = function()
-            require("colorizer").setup(opts)
-            vim.defer_fn(function()
-                require("colorizer").attach_to_buffer(0)
-            end, 0)
-        end,
     },
     {
         "nvimdev/dashboard-nvim",

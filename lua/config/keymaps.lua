@@ -15,10 +15,10 @@ map("n", "<leader>xq", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]u
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+map("t", "<Esc><Esc>", "<C-\\><C-N>", { desc = "Exit terminal mode" })
 
 -- map("i", "<M-f>", "<ESC>")
--- map("n", "<leader>cz", ":RunCode<CR>", { desc = "Run code" })
+map("n", "<leader>cz", ":RunCode<CR>", { desc = "Run code" })
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
@@ -28,13 +28,18 @@ map("n", "<S-l>", vim.cmd.bnext, opts)
 map("n", "<leader>qq", ":q<CR>", opts)
 --nvim-tree
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
--- map('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree toggle window' })
--- map('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'nvimtree focus window' })
 map("n", "<leader>tt", "<cmd>Telescope themes<cr>", { desc = "NvChad Themes" })
+map("n", "<leader>tp", function()
+  require("nvchad.themes").open()
+end, { desc = "Picker nvchad themes" })
 map("n", "<leader>tc", "<cmd>NvCheatsheet<cr>", { desc = "Cheatsheet" })
 -- lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })
+map("n", "<leader>t-", function()
+    require("nvchad.term").new({ pos = "sp" })
+end, { desc = "Terminal new horizontal" })
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 

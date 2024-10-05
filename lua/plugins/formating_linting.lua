@@ -41,6 +41,7 @@ return { -- Autoformat
                 --formating
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.isort,
                 -- null_ls.builtins.diagnostics.eslint,
                 -- null_ls.builtins.completion.spell,
             },

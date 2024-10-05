@@ -1,4 +1,4 @@
-return { -- Autocompletion
+local options = { -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
@@ -34,13 +34,24 @@ return { -- Autocompletion
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
+        -- {
+        --     "supermaven-inc/supermaven-nvim",
+        --     -- lazy = true,
+        --     event = "InsertEnter",
+        --     opts = {
+        --         disable_keymaps = true,
+        --     },
+        -- },
         {
-            "supermaven-inc/supermaven-nvim",
-            lazy = true,
-            event = "BufEnter",
-            opts = {
-                disable_keymaps = true,
-            },
+            "zbirenbaum/copilot-cmp",
+            dependencies = "copilot.lua",
+            opts = {},
+            config = function(_, opts)
+                local copilot_cmp = require("copilot_cmp")
+                copilot_cmp.setup(opts)
+                -- attach cmp source whenever copilot attaches
+                -- fixes lazy-loading issues with the copilot cmp source
+            end,
         },
     },
     config = function()
@@ -115,12 +126,22 @@ return { -- Autocompletion
                     -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
                     group_index = 0,
                 },
-                { name = "nvim_lsp" },
+                {
+                    name = "copilot",
+                    group_index = 2,
+                    priority = 100,
+                },
+                { name = "nvim_lsp", group_index = 2 },
                 { name = "luasnip" },
                 { name = "path" },
                 { name = "cmdline" },
-                { name = "supermaven" },
+                -- { name = "supermaven" ,group_index = 2},
             },
         })
     end,
 }
+options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+
+require("cmp").setup(options)
+
+return options
