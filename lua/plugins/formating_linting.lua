@@ -1,4 +1,32 @@
 return { -- Autoformat
+    "nvimtools/none-ls.nvim",
+    config = function()
+        local null_ls = require("null-ls")
+        null_ls.setup({
+            sources = {
+                --formating
+                null_ls.builtins.formatting.stylua,
+                null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.isort,
+                null_ls.builtins.formatting.prettierd,
+                -- null_ls.builtins.diagnostics.eslint,
+                -- null_ls.builtins.completion.spell,
+            },
+            on_attach = function(client, bufnr)
+                if client.name == "null-ls" then
+                    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        group = vim.api.nvim_create_augroup("LspFormatting", {}),
+                        buffer = bufnr,
+                        callback = function()
+                            vim.lsp.buf.format({ bufnr = bufnr })
+                        end,
+                    })
+                end
+            end,
+        })
+        -- vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = "[B]uffer [F]ormat" })
+    end,
     -- "stevearc/conform.nvim",
     -- event = { "BufWritePre" },
     -- cmd = { "ConformInfo" },
@@ -33,19 +61,4 @@ return { -- Autoformat
     --         -- javascript = { "prettierd", "prettier", stop_after_first = true },
     --     },
     -- },
-    "nvimtools/none-ls.nvim",
-    config = function()
-        local null_ls = require("null-ls")
-        null_ls.setup({
-            sources = {
-                --formating
-                null_ls.builtins.formatting.stylua,
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.isort,
-                -- null_ls.builtins.diagnostics.eslint,
-                -- null_ls.builtins.completion.spell,
-            },
-        })
-        vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = "[B]uffer [F]ormat" })
-    end,
 }

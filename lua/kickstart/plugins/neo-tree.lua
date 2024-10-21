@@ -9,13 +9,16 @@ return {
     cmd = "Neotree",
     opts = {
         close_if_last_window = true,
-        -- hijack_netrw_behavior = "open_current",
+        hijack_netrw_behavior = "open_current",
         filesystem = {
+            bind_to_cwd = true,
+            follow_current_file = { enabled = true, leave_dirs_open = false },
             use_libuv_file_watcher = true,
-            follow_current_file = {enabled= true},
             filtered_items = {
-                hidden = false,
+                hide_hidden = false,
                 hide_dotfiles = false,
+                -- hide_by_pattern = {"*/"}, -- This will hide all subdirectories
+                hide_by_pattern = { "*/", "!./" }, -- Oculta todas las subcarpetas excepto la actual
             },
             -- window = {
             --     mappings = {

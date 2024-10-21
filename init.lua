@@ -1,10 +1,10 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+vim.opt.conceallevel = 1
 vim.o.expandtab = true
 -- vim.o.softtabstop = 4
 -- Set to true if you have a Nerd Font installed and selected in the terminal
@@ -76,6 +76,12 @@ vim.o.laststatus = 3
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 vim.opt.wrap = true
+local signs = { Error = " ", Warn = " ", Hint = " 󱠂", Info = " " }
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 -- NvChad config append
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
