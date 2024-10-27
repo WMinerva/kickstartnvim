@@ -39,6 +39,8 @@ map("n", "<leader>cR", ":CompetiTest run<CR>", { desc = "Run CompiTest" })
 map("n", "<leader>on", ":ObsidianNew<CR> ")
 map("n", "<leader>ot", ":ObsidianTags<CR>")
 map("n", "<leader>os", ":ObsidianSearch<CR>")
+map("n", "<leader>oo", ":ObsidianToggleCheckbox<CR>")
+map("n", "<leader>ox", ":ObsidianCheck<CR>")
 
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 map("n", "<S-l>", vim.cmd.bnext, opts)

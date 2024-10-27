@@ -17,5 +17,9 @@ return {
         description = {
             position = "right",
         },
+        storage = {
+            home = "~/Escritorio/workspace/competitive_programming/leetcode/",
+            cache = "~/Escritorio/workspace/competitive_programming/cache/",
+        },
     },
 }

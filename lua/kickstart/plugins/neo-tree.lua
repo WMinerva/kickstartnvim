@@ -8,6 +8,7 @@ return {
     },
     cmd = "Neotree",
     opts = {
+        sources = { "filesystem", "buffers", "git_status" },
         close_if_last_window = true,
         hijack_netrw_behavior = "open_current",
         filesystem = {
@@ -18,7 +19,6 @@ return {
                 hide_hidden = false,
                 hide_dotfiles = false,
                 -- hide_by_pattern = {"*/"}, -- This will hide all subdirectories
-                hide_by_pattern = { "*/", "!./" }, -- Oculta todas las subcarpetas excepto la actual
             },
             -- window = {
             --     mappings = {

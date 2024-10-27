@@ -42,6 +42,10 @@ require("lazy").setup({
             -- },
         },
     },
+    {
+        "mg979/vim-visual-multi",
+        opt = {},
+    },
 
     -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
     --
@@ -76,7 +80,7 @@ require("lazy").setup({
             },
         },
     },
-    { "Bilal2453/luvit-meta", lazy = true },
+    { "Bilal2453/luvit-meta",     lazy = true },
     -- { -- You can easily change to a different colorscheme.
     --     -- Change the name of the colorscheme plugin below, and then
     --     -- change the command in the config to whatever the name of that colorscheme is.
