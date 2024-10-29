@@ -78,6 +78,7 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 --windows
+map("n", "<leader>db", "<cmd>bd<CR>", { desc = "Delete Buffer", remap = true })
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
