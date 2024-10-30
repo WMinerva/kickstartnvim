@@ -2,7 +2,8 @@ local M = {}
 
 M.base46 = {
     theme = "everforest",
-    -- theme_toggle = { "onedark", "one_light" },
+    theme_toggle = { "everforest", "gruvbox_light" },
+    transparency = false,
     -- hl_override = {
     -- 	Comment = { italic = true },
     -- 	["@comment"] = { italic = true },

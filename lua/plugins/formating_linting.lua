@@ -14,7 +14,7 @@ return { -- Autoformat
             },
             on_attach = function(client, bufnr)
                 if client.name == "null-ls" then
-                    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                    vim.api.nvim_clear_autocmds({ buffer = bufnr })
                     vim.api.nvim_create_autocmd("BufWritePre", {
                         group = vim.api.nvim_create_augroup("LspFormatting", {}),
                         buffer = bufnr,
