@@ -80,7 +80,7 @@ require("lazy").setup({
             },
         },
     },
-    { "Bilal2453/luvit-meta",     lazy = true },
+    { "Bilal2453/luvit-meta", lazy = true },
     -- { -- You can easily change to a different colorscheme.
     --     -- Change the name of the colorscheme plugin below, and then
     --     -- change the command in the config to whatever the name of that colorscheme is.
@@ -120,22 +120,15 @@ require("lazy").setup({
     { import = "plugins" },
 }, {
     ui = {
-        -- If you are using a Nerd Font: set icons to an empty table which will use the
-        -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-        icons = vim.g.have_nerd_font and {} or {
-            cmd = "⌘",
-            config = "🛠",
-            event = "📅",
-            ft = "📂",
-            init = "⚙",
-            keys = "🗝",
-            plugin = "🔌",
-            runtime = "💻",
-            require = "🌙",
-            source = "📄",
-            start = "🚀",
-            task = "📌",
-            lazy = "💤 ",
+        icons = {
+            ft = "",
+            lazy = "󰂠 ",
+            loaded = "",
+            not_loaded = "",
         },
+    },
+    checker = {
+        enabled = true, -- check for plugin updates periodically
+        notify = false, -- notify on update
     },
 })

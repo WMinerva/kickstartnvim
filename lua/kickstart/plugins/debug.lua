@@ -63,31 +63,15 @@ return {
                 -- Update this to ensure that you have the debuggers for the langs you want
                 -- "delve",
                 "debugpy",
+                "java-debug-adapter",
+                "java-test",
             },
         })
         -- require("dapui").setup()
 
         -- Dap UI setup
         -- For more information, see |:help nvim-dap-ui|
-        dapui.setup({
-            -- Set icons to characters that are more likely to work in every terminal.
-            --    Feel free to remove or use ones that you like more! :)
-            --    Don't feel like these are good choices.
-            -- icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
-            -- controls = {
-            --     icons = {
-            --         pause = "⏸",
-            --         play = "▶",
-            --         step_into = "⏎",
-            --         step_over = "⏭",
-            --         step_out = "⏮",
-            --         step_back = "b",
-            --         run_last = "▶▶",
-            --         terminate = "⏹",
-            --         disconnect = "⏏",
-            --     },
-            -- },
-        })
+        dapui.setup()
 
         dap.listeners.after.event_initialized["dapui_config"] = dapui.open
         dap.listeners.before.event_terminated["dapui_config"] = dapui.close
@@ -102,5 +86,20 @@ return {
         --     },
         -- })
         require("dap-python").setup("~/.local/share/kickstart/mason/packages/debugpy/venv/bin/python3")
+        dap.configurations.java = {
+            {
+                name = "Debug Launch (2GB)",
+                javaExec = "java",
+                request = "launch",
+                type = "java",
+            },
+            {
+                type = "java",
+                request = "attach",
+                name = "Debug (Attach) - Remote",
+                hostName = "127.0.0.1",
+                port = 5005,
+            },
+        }
     end,
 }
