@@ -2,16 +2,6 @@
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-
--- Setup our JDTLS server any time we open up a java file
-vim.cmd([[
-    augroup jdtls_lsp
-        autocmd!
-        autocmd FileType java lua require'config.jdtls'.setup_jdtls()
-    augroup end
-]])
 -- highlight when yank text
 
 vim.api.nvim_create_autocmd("TextYankPost", {

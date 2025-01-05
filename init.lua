@@ -1,5 +1,4 @@
 -- Set <space> as the leader key
--- See `:help mapleader`
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.tabstop = 4
@@ -19,6 +18,7 @@ vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.numberwidth = 4
 vim.opt.fillchars = {
     -- foldopen = "",
     -- foldclose = "",
@@ -51,6 +51,7 @@ vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
+-- vim.diagnostic.config({ virtual_text = false })
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -76,7 +77,7 @@ vim.o.laststatus = 3
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 vim.opt.wrap = true
-local signs = { Error = " ", Warn = " ", Hint = " 󱠂", Info = " " }
+local signs = { Error = " ", Warn = "", Hint = " 󱠂", Info = " " }
 
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type

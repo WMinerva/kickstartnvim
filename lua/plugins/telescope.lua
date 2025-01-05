@@ -25,7 +25,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     },
     keys = {
         {
-            "<Leader>de",
+            "<Leader>e",
             -- ":Telescope file_browser path=%:p:h<cr>",
             function()
                 require("telescope").extensions.file_browser.file_browser({

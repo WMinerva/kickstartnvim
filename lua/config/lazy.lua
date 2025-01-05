@@ -44,6 +44,7 @@ require("lazy").setup({
     },
     {
         "mg979/vim-visual-multi",
+        lazy = true,
         opt = {},
     },
 
@@ -80,7 +81,7 @@ require("lazy").setup({
             },
         },
     },
-    { "Bilal2453/luvit-meta", lazy = true },
+    { "Bilal2453/luvit-meta",     lazy = true },
     -- { -- You can easily change to a different colorscheme.
     --     -- Change the name of the colorscheme plugin below, and then
     --     -- change the command in the config to whatever the name of that colorscheme is.

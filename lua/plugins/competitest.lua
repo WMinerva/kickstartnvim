@@ -1,5 +1,6 @@
 return {
     "xeluxee/competitest.nvim",
+    cmd = {"CompetiTest receive problem","CompetiTest run"},
     dependencies = "MunifTanjim/nui.nvim",
     opts = {
         testcases_use_single_file = true,
