@@ -67,13 +67,13 @@ return {
         notifier = { enabled = true },
         quickfile = { enabled = true },
         statuscolumn = { enabled = true },
-        input = { enabled = true },
+        -- input = { enabled = true },
         words = { enabled = true },
-        styles = {
-            notification = {
-                wo = { wrap = true }, -- Wrap notifications
-            },
-        },
+        -- styles = {
+        --     notification = {
+        --         wo = { wrap = true }, -- Wrap notifications
+        --     },
+        -- },
     },
     keys = {
         {

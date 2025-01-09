@@ -20,12 +20,12 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.numberwidth = 4
 vim.opt.fillchars = {
-    -- foldopen = "",
-    -- foldclose = "",
-    -- fold = " ",
-    -- foldsep = " ",
-    -- diff = "╱",
-    eob = " ",
+  -- foldopen = "",
+  -- foldclose = "",
+  -- fold = " ",
+  -- foldsep = " ",
+  -- diff = "╱",
+  eob = " ",
 }
 vim.opt.shortmess:append("sI")
 
@@ -34,7 +34,7 @@ vim.opt.shortmess:append("sI")
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-    vim.opt.clipboard = "unnamedplus"
+  vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Enable break indent
@@ -71,17 +71,17 @@ vim.opt.list = true
 vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.o.laststatus = 3
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 vim.opt.wrap = true
-local signs = { Error = " ", Warn = "", Hint = " 󱠂", Info = " " }
+local signs = { Error = "", Warn = "", Hint = "󱠂", Info = "" }
 
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- NvChad config append
@@ -93,7 +93,7 @@ require("config.autocmds")
 
 -- To load all integrations at once
 for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
-    dofile(vim.g.base46_cache .. v)
+  dofile(vim.g.base46_cache .. v)
 end
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
