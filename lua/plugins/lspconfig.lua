@@ -1,15 +1,33 @@
+---@diagnostic disable: missing-fields
 return {
 
     "neovim/nvim-lspconfig",
+
     dependencies = {
 
         { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { "j-hui/fidget.nvim",       opts = {} },
+        { "j-hui/fidget.nvim", opts = {} },
         -- Allows extra capabilities provided by nvim-cmp
         "hrsh7th/cmp-nvim-lsp",
+        {
+            "SmiteshP/nvim-navic",
+            config = function()
+                dofile(vim.g.base46_cache .. "navic")
+                require("nvim-navic").setup({
+                    lsp = { auto_attach = true },
+                    highlight = true,
+                    click = true,
+                })
+            end,
+        },
+        -- {
+        --     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        --     enabled = false,
+        --     opt = {},
+        -- },
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -81,6 +99,10 @@ return {
                         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
                     end, "[T]oggle Inlay [H]ints")
                 end
+                -- if client.server_capabilities.documentSymbolProvider then
+                -- if client.supports_method("textDocument/documentSymbol") then
+                --     require("nvim-navic").attach(client, event.buf)
+                -- end
             end,
         })
 
@@ -91,6 +113,7 @@ return {
             -- clangd = {},
             -- gopls = {},
             pyright = {},
+            -- ruff = {},
             jdtls = {},
             -- rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -120,8 +143,8 @@ return {
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             "stylua", -- Used to format Lua code
-            "black",
-            "isort",
+            -- "black",
+            -- "isort",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -129,6 +152,10 @@ return {
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
+                    server.on_attach = function(client, bufnr)
+                        client.server_capabilities.semanticTokensProvider = nil
+                    end
+
                     -- This handles overriding only values explicitly passed
                     -- by the server configuration above. Useful when disabling
                     -- certain features of an LSP (for example, turning off formatting for tsserver)

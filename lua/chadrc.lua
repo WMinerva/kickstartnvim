@@ -8,19 +8,34 @@ M.base46 = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
     },
+    -- hl_add = {
+    --     WinBar = { bg = "NONE" },
+    --     WinBarNC = { bg = "NONE" },
+    -- },
+    integrations = {
+        "navic",
+    },
 }
 M.lsp = {
     -- signature = false,
 }
 M.ui = {
     cmp = {
-        -- style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
+        style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
     },
     statusline = {
         -- theme = "vscode_colored",
         -- theme = "minimal",
         -- separator_style = "round",
-        order = { "mode", "file", "git", "%=", "diagnostics", "cwd", "cursor" },
+        order = { "mode", "file", "navic", "%=", "git", "diagnostics", "cwd", "cursor" },
+        modules = {
+            navic = function()
+                return "%{%v:lua.require'nvim-navic'.get_location()%}"
+                -- color_correction = "dynamic",
+                -- return "%{%v:lua.dropbar.get_dropbar_str()%}"
+            end,
+            -- f = "%F",
+        },
         -- order = { "mode", "file", "git", "%=", "lsp", "%=", "lsp_msg", "cwd", "cursor" },
     },
     -- telescope = { style = "bordered" },
