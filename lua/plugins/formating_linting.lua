@@ -43,7 +43,7 @@ return { -- Autoformat
                 end
             end,
         })
-        -- vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = "[B]uffer [F]ormat" })
+        vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
     end,
     -- "stevearc/conform.nvim",
     -- event = { "BufWritePre" },

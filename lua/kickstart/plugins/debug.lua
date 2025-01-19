@@ -1,9 +1,3 @@
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
 return {
     "mfussenegger/nvim-dap",
     dependencies = {
@@ -27,10 +21,10 @@ return {
         local dapui = require("dapui")
         return {
             -- Basic debugging keymaps, feel free to change to your liking!
-            { "<leader>bs", dap.continue,          desc = "Debug: Start/Continue" },
-            { "<F1>",       dap.step_into,         desc = "Debug: Step Into" },
-            { "<F2>",       dap.step_over,         desc = "Debug: Step Over" },
-            { "<F3>",       dap.step_out,          desc = "Debug: Step Out" },
+            { "<leader>bs", dap.continue, desc = "Debug: Start/Continue" },
+            { "<F1>", dap.step_into, desc = "Debug: Step Into" },
+            { "<F2>", dap.step_over, desc = "Debug: Step Over" },
+            { "<F3>", dap.step_out, desc = "Debug: Step Out" },
             { "<leader>bp", dap.toggle_breakpoint, desc = "Debug: Toggle Breakpoint" },
             {
                 "<leader>B",
@@ -86,20 +80,20 @@ return {
         --     },
         -- })
         require("dap-python").setup("~/.local/share/kickstart/mason/packages/debugpy/venv/bin/python3")
-        dap.configurations.java = {
-            {
-                name = "Debug Launch (2GB)",
-                javaExec = "java",
-                request = "launch",
-                type = "java",
-            },
-            {
-                type = "java",
-                request = "attach",
-                name = "Debug (Attach) - Remote",
-                hostName = "127.0.0.1",
-                port = 5005,
-            },
-        }
+        -- dap.configurations.java = {
+        --     {
+        --         name = "Debug Launch (2GB)",
+        --         javaExec = "java",
+        --         request = "launch",
+        --         type = "java",
+        --     },
+        --     {
+        --         type = "java",
+        --         request = "attach",
+        --         name = "Debug (Attach) - Remote",
+        --         hostName = "127.0.0.1",
+        --         port = 5005,
+        --     },
+        -- }
     end,
 }

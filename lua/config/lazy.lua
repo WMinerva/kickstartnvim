@@ -17,10 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
-    -- NOTE: Plugins can also be added by using a table,
-    -- with the first argument being the link and the following
-    -- keys can be used to configure plugin behavior/loading/etc.
-    --
     -- Use `opts = {}` to force a plugin to be loaded.
     --
     -- Here is a more advanced example where we pass configuration
@@ -47,18 +43,6 @@ require("lazy").setup({
         lazy = true,
         opt = {},
     },
-
-    -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
-    --
-    -- This is often very useful to both group configuration, as well as handle
-    -- lazy loading plugins that don't need to be loaded immediately at startup.
-    --
-    -- For example, in the following configuration, we use:
-    --  event = 'VimEnter'
-    --
-    -- which loads which-key before all the UI elements are loaded. Events can be
-    -- normal autocommands events (`:help autocmd-events`).
-    --
     -- Then, because we use the `config` key, the configuration only runs
     -- after the plugin has been loaded:
     --  config = function() ... end
@@ -81,7 +65,7 @@ require("lazy").setup({
             },
         },
     },
-    { "Bilal2453/luvit-meta",     lazy = true },
+    { "Bilal2453/luvit-meta", lazy = true },
     -- { -- You can easily change to a different colorscheme.
     --     -- Change the name of the colorscheme plugin below, and then
     --     -- change the command in the config to whatever the name of that colorscheme is.

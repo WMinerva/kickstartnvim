@@ -1,33 +1,13 @@
 ---@diagnostic disable: missing-fields
 return {
-
     "neovim/nvim-lspconfig",
 
     dependencies = {
-
         { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { "j-hui/fidget.nvim", opts = {} },
         -- Allows extra capabilities provided by nvim-cmp
         "hrsh7th/cmp-nvim-lsp",
-        {
-            "SmiteshP/nvim-navic",
-            config = function()
-                dofile(vim.g.base46_cache .. "navic")
-                require("nvim-navic").setup({
-                    lsp = { auto_attach = true },
-                    highlight = true,
-                    click = true,
-                })
-            end,
-        },
-        -- {
-        --     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        --     enabled = false,
-        --     opt = {},
-        -- },
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -152,15 +132,17 @@ return {
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
-                    server.on_attach = function(client, bufnr)
-                        client.server_capabilities.semanticTokensProvider = nil
-                    end
 
                     -- This handles overriding only values explicitly passed
+                    server.on_attach = function(client, _)
+                        client.server_capabilities.semanticTokensProvider = nil
+                    end
                     -- by the server configuration above. Useful when disabling
                     -- certain features of an LSP (for example, turning off formatting for tsserver)
                     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                    -- if server_name ~= "jdtls" then
                     require("lspconfig")[server_name].setup(server)
+                    -- end
                 end,
             },
         })

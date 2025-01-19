@@ -4,6 +4,7 @@ return {
     lazy = false,
     opts = {
         bigfile = { enabled = true },
+        indent = { enabled = true },
         dashboard = {
             enabled = true,
             preset = {
