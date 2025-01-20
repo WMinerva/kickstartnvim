@@ -3,6 +3,12 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+        -- animate = {
+        --     enabled = true,
+        --     duration = 20, -- ms per step
+        --     easing = "linear",
+        --     fps = 60,
+        -- },
         bigfile = { enabled = true },
         indent = { enabled = true },
         dashboard = {

@@ -6,7 +6,7 @@ return {
         {
             "<leader>bf",
             function()
-                require("conform").format({ async = true, lsp_fallback = true })
+                require("conform").format({ async = true, lsp_format = "fallback" })
             end,
             mode = "",
             desc = "[B]uffer [F]ormat",
@@ -27,7 +27,8 @@ return {
             end
             return {
                 timeout_ms = 500,
-                lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+                -- lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+                lsp_format = lsp_format_opt,
             }
         end,
         formatters_by_ft = {

@@ -4,6 +4,9 @@ local opts = { noremap = true, silent = true }
 --
 
 map("n", "<S-l>", vim.cmd.bnext, opts)
+map("n", "<leader>h", function()
+    Snacks.notifier.show_history(opts)
+end, { desc = "Show Notification" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
