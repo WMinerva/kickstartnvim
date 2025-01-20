@@ -11,5 +11,10 @@ return {
                 position = { row = "15%", col = "50%" },
             },
         },
+        lsp = {
+            progress = {
+                enabled = false,
+            },
+        },
     },
 }
