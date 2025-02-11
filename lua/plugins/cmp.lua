@@ -126,10 +126,10 @@ local options = { -- Autocompletion
                 },
                 {
                     name = "copilot",
-                    group_index = 1,
-                    priority = 100,
+                    -- group_index = 2,
+                    -- priority = 100,
                 },
-                { name = "nvim_lsp", group_index = 2 },
+                { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "path" },
                 { name = "cmdline" },

@@ -2,13 +2,24 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    -- config = function()
+    --     dofile(vim.g.base46_cache .. "snacks")
+    -- end,
     opts = {
-        -- animate = {
-        --     enabled = true,
-        --     duration = 20, -- ms per step
-        --     easing = "linear",
-        --     fps = 60,
+        -- dofile(vim.g.base46_cache .. "snacks"),
+        -- picker = {
+        --     sources = {
+        --         explorer = {
+        --             layout = { layout = { position = "right" } },
+        --         },
+        --     },
         -- },
+        animate = {
+            enabled = true,
+            -- duration = 20, -- ms per step
+            -- easing = "linear",
+            -- fps = 60,
+        },
         bigfile = { enabled = true },
         indent = { enabled = true },
         dashboard = {
@@ -82,6 +93,9 @@ return {
         --     },
         -- },
     },
+    -- config = function(_, opts)
+    --     dofile(vim.g.base46_cache .. "snacks")
+    -- end,
     keys = {
         {
             "<leader>g",
@@ -93,7 +107,7 @@ return {
         {
             "<leader>z",
             function()
-                Snacks.picker()
+                Snacks.picker.explorer()
             end,
         },
     },
