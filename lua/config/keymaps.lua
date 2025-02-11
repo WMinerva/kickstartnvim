@@ -47,7 +47,6 @@ map("n", "<leader>ox", ":ObsidianCheck<CR>")
 --neo-tree
 map("n", "<leader>df", "<cmd>Neotree toggle<CR>", { desc = "Explorer Neotree" })
 -- map("n", "<leader>de", "<cmd>NvimTreeToggle<CR>", { desc = "NvimTree" })
-
 map("n", "<leader>tt", "<cmd>Telescope themes<cr>", { desc = "NvChad Themes" })
 map("n", "<leader>tc", "<cmd>NvCheatsheet<cr>", { desc = "Cheatsheet" })
 

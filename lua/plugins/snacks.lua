@@ -90,5 +90,11 @@ return {
             end,
             desc = "Lazygit",
         },
+        {
+            "<leader>z",
+            function()
+                Snacks.picker()
+            end,
+        },
     },
 }

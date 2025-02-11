@@ -8,7 +8,7 @@ return {
         "ObsidianCheck",
     },
     version = "*", -- recommended, use latest release instead of latest commit
-    lazy = false,
+    -- lazy = false,
     ft = "markdown",
     dependencies = {
         "nvim-lua/plenary.nvim",

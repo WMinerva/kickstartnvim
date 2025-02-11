@@ -29,7 +29,7 @@ local options = { -- Autocompletion
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
+        { "hrsh7th/cmp-cmdline", event = { "CmdLineEnter" }, opt = { history = true } },
         -- {
         --     "supermaven-inc/supermaven-nvim",
         --     -- lazy = true,
@@ -62,7 +62,8 @@ local options = { -- Autocompletion
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            completion = { completeopt = "menu,menuone,noinsert" },
+            -- completion = { completeopt = "menu,menuone,noinsert" },
+            completion = { completeopt = "menu,menuone,noselect" },
 
             -- For an understanding of why these mappings were
             -- chosen, you will need to read `:help ins-completion`
@@ -125,7 +126,7 @@ local options = { -- Autocompletion
                 },
                 {
                     name = "copilot",
-                    group_index = 2,
+                    group_index = 1,
                     priority = 100,
                 },
                 { name = "nvim_lsp", group_index = 2 },

@@ -6,6 +6,7 @@ return {
             java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
             python = "python3 -u '$dir/$fileName'",
             cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+            lua = "cd $dir && lua $fileName",
             -- typescript = "deno run",
             -- rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
             -- javascript = "node $dir/$fileName",
