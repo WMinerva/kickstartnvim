@@ -19,6 +19,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         { "nvim-telescope/telescope-ui-select.nvim" },
         { "nvim-telescope/telescope-file-browser.nvim" },
+        -- { "jonarrien/telescope-cmdline.nvim" },
 
         -- Useful for getting pretty icons, but requires a Nerd Font.
         { "nvim-tree/nvim-web-devicons" },
@@ -31,7 +32,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
                 require("telescope").extensions.file_browser.file_browser({
                     path = "%:p:h",
                     select_buffer = true,
-                    -- initial_mode = "normal",
+                    initial_mode = "normal",
                     hidden = true,
                     -- border = false,
                 })
@@ -73,6 +74,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             },
         })
         require("telescope").load_extension("file_browser")
+        -- require("telescope").load_extension("cmdline")
 
         -- Enable Telescope extensions if they are installed
         pcall(require("telescope").load_extension, "fzf")

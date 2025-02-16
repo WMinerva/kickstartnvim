@@ -24,12 +24,13 @@ M.lsp = {
 }
 M.ui = {
     cmp = {
+        lspkind_text = true,
         style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
     },
     statusline = {
         theme = "vscode_colored",
         -- separator_style = "round",
-        order = { "mode", "file", "navic", "%=", "last_keys", "lsp_info", "git", "diagnostics", "cwd", "progress" },
+        order = { "mode", "file", "navic", "%=", "last_keys", "lsp_info", "git", "diagnostics", "progress", "cwd" },
         -- order = { "mode", "file","lsp", "lsp_msg", "%=", "git", "diagnostics", "cwd", "cursor" },
         modules = {
             navic = function()
@@ -39,11 +40,11 @@ M.ui = {
                 return os.date("%R")
             end,
             progress = function()
-                return "%#St_porc#  " .. "%p %%"
+                return "%#St_porc# " .. "%p %% "
             end,
             last_keys = function()
                 -- return "%{reg_recording()}"
-                return vim.fn.reg_recording() ~= "" and "Recording: @" .. vim.fn.reg_recording() or ""
+                return vim.fn.reg_recording() ~= "" and "Recording: @ " .. vim.fn.reg_recording() or ""
             end,
             -- get_capslock = function()
             --     local handle = io.popen("xset -q | grep 'Caps Lock' | awk '{print $4}'")
