@@ -1,11 +1,17 @@
 -- Set <space> as the leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.opt.conceallevel = 1
+vim.o.swapfile = false
+vim.opt.undofile = true
 vim.o.expandtab = true
--- vim.o.softtabstop = 4
+vim.o.shiftwidth = 4 --Amount of indent
+vim.o.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
+vim.o.softtabstop = 4 --How many spaces are inserted for a <Tab>
+vim.o.smarttab = true
+vim.o.smartindent = true
+vim.o.autoindent = true
+vim.opt.conceallevel = 1
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 -- [[ Setting options ]]
@@ -75,11 +81,12 @@ vim.opt.inccommand = "split"
 vim.o.laststatus = 3
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 -- vim.opt.wrap = false
 vim.keymap.set("n", "<leader>un", function()
     if vim.wo.number then
         vim.wo.number = false
+        local e
         print("Number Disable")
     else
         vim.wo.number = true
