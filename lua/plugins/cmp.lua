@@ -1,23 +1,14 @@
-local options = { -- Autocompletion
+-- local options = { -- Autocompletion
+return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
         {
             "L3MON4D3/LuaSnip",
-            build = (function()
-                -- Build Step is needed for regex support in snippets.
-                -- This step is not supported in many windows environments.
-                -- Remove the below condition to re-enable on windows.
-                if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-                    return
-                end
-                return "make install_jsregexp"
-            end)(),
+            build = "make install_jsregexp",
+            version = "v2.*",
             dependencies = {
-                -- `friendly-snippets` contains a variety of premade snippets.
-                --    See the README about individual language/framework/plugin snippets:
-                --    https://github.com/rafamadriz/friendly-snippets
                 {
                     "rafamadriz/friendly-snippets",
                     config = function()
@@ -25,19 +16,33 @@ local options = { -- Autocompletion
                     end,
                 },
             },
+            config = function()
+                local ls = require("luasnip")
+                local s = ls.snippet
+                local t = ls.text_node
+                local i = ls.insert_node
+                ls.add_snippets("lua", {
+                    s("hel", {
+                        t('print("Hello, world!")'),
+                    }),
+                })
+            end,
         },
+        -- {
+        --     "windwp/nvim-autopairs",
+        --     dependencies = { "hrsh7th/nvim-cmp" },
+        --     config = function()
+        --         require("nvim-autopairs").setup({})
+        --         -- If you want to automatically add `(` after selecting a function or method
+        --         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+        --         local cmp = require("cmp")
+        --         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+        --     end,
+        -- },
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
-        { "hrsh7th/cmp-cmdline", event = { "CmdLineEnter" }, opt = { history = true } },
-        -- {
-        --     "supermaven-inc/supermaven-nvim",
-        --     -- lazy = true,
-        --     event = "InsertEnter",
-        --     opts = {
-        --         disable_keymaps = true,
-        --     },
-        -- },
+        "hrsh7th/cmp-cmdline",
         {
             "zbirenbaum/copilot-cmp",
             dependencies = "copilot.lua",
@@ -62,12 +67,10 @@ local options = { -- Autocompletion
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            -- completion = { completeopt = "menu,menuone,noinsert" },
-            completion = { completeopt = "menu,menuone,noselect" },
+            completion = { completeopt = "menu,menuone,noinsert" },
+            -- completion = { completeopt = "menu,menuone,noselect" },
+            -- formatting = { fields = { "kind", "menu","abbr" } },
 
-            -- For an understanding of why these mappings were
-            -- chosen, you will need to read `:help ins-completion`
-            --
             -- No, but seriously. Please read `:help ins-completion`, it is really good!
             mapping = cmp.mapping.preset.insert({
                 -- Select the [n]ext item
@@ -126,11 +129,20 @@ local options = { -- Autocompletion
                 },
                 {
                     name = "copilot",
-                    -- group_index = 2,
-                    -- priority = 100,
+                    -- group_index = 3,
+                    priority = 400,
                 },
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
+                {
+                    name = "nvim_lsp",
+                    priority = 900,
+                    -- group_index = 2,
+                },
+                {
+                    name = "luasnip",
+                    -- group_index = 1,
+
+                    priority = 1000,
+                },
                 { name = "path" },
                 { name = "cmdline" },
                 -- { name = "supermaven" ,group_index = 2},
@@ -138,8 +150,8 @@ local options = { -- Autocompletion
         })
     end,
 }
-options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
-
-require("cmp").setup(options)
-
-return options
+-- options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+--
+-- require("cmp").setup(options)
+--
+-- return options

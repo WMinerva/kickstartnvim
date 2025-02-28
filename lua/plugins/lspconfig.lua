@@ -92,14 +92,59 @@ return {
         local servers = {
             -- clangd = {},
             -- gopls = {},
+
+            -- bash lsp, linter, formatter
+            bashls = {},
+            shellcheck = {},
+            shfmt = {},
             pyright = {},
             -- ruff = {},
+            -- Web development lsp, linter, formatter
+            html = {},
+            cssls = {},
+            -- eslint = {},
+            prettierd = {},
             jdtls = {},
             -- rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             -- phpactor = {},
-            --
-            -- tsserver = {},
+            vtsls = {
+                filetypes = {
+                    "javascript",
+                    "javascriptreact",
+                    "javascript.jsx",
+                    "typescript",
+                    "typescriptreact",
+                    "typescript.tsx",
+                },
+                settings = {
+                    complete_function_calls = true,
+                    vtsls = {
+                        enableMoveToFileCodeAction = true,
+                        autoUseWorkspaceTsdk = true,
+                        experimental = {
+                            maxInlayHintLength = 30,
+                            completion = {
+                                enableServerSideFuzzyMatch = true,
+                            },
+                        },
+                    },
+                    typescript = {
+                        updateImportsOnFileMove = { enabled = "always" },
+                        suggest = {
+                            completeFunctionCalls = true,
+                        },
+                        inlayHints = {
+                            enumMemberValues = { enabled = true },
+                            functionLikeReturnTypes = { enabled = true },
+                            parameterNames = { enabled = "literals" },
+                            parameterTypes = { enabled = true },
+                            propertyDeclarationTypes = { enabled = true },
+                            variableTypes = { enabled = false },
+                        },
+                    },
+                },
+            },
             --
 
             lua_ls = {
@@ -140,9 +185,9 @@ return {
                     -- by the server configuration above. Useful when disabling
                     -- certain features of an LSP (for example, turning off formatting for tsserver)
                     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                    -- if server_name ~= "jdtls" then
-                    require("lspconfig")[server_name].setup(server)
-                    -- end
+                    if server_name ~= "jdtls" then
+                        require("lspconfig")[server_name].setup(server)
+                    end
                 end,
             },
         })

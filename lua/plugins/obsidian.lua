@@ -21,7 +21,7 @@ return {
             -- },
             {
                 name = "workspace",
-                path = "~/Escritorio/workspace/notes/",
+                path = "~/Workspace/notes/",
             },
         },
 

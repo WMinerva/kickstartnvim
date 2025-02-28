@@ -23,10 +23,14 @@ M.lsp = {
     -- signature = false,
 }
 M.ui = {
-    cmp = {
-        lspkind_text = true,
-        style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
+    tabufline = {
+        enabled = false,
     },
+    -- cmp = {
+    --     lspkind_text = true,
+    --     icons_left = true,
+    --     style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
+    -- },
     statusline = {
         theme = "vscode_colored",
         -- separator_style = "round",

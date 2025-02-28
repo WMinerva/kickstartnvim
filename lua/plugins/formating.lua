@@ -32,12 +32,18 @@ return {
             }
         end,
         formatters_by_ft = {
+            bash = { "shfmt" },
+            sh = { "shfmt" },
             lua = { "stylua" },
             -- Conform can also run multiple formatters sequentially
             python = { "black" },
+            json = { "prettierd" },
             --|
             -- You can use 'stop_after_first' to run the first available formatter from the list
-            -- javascript = { "prettierd", "prettier", stop_after_first = true },
+            markdown = { "prettierd", "prettier", stop_after_first = true },
+            html = { "prettierd", "prettier", stop_after_first = true },
+            css = { "prettierd", "prettier", stop_after_first = true },
+            javascript = { "prettierd", "prettier", stop_after_first = true },
         },
     },
 }

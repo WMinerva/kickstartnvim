@@ -76,7 +76,28 @@ vim.o.laststatus = 3
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-vim.opt.wrap = true
+-- vim.opt.wrap = false
+vim.keymap.set("n", "<leader>un", function()
+    if vim.wo.number then
+        vim.wo.number = false
+        print("Number Disable")
+    else
+        vim.wo.number = true
+        print("Number Enabled ")
+    end
+end, { desc = "Toggle Line Numbers" })
+-- Alternar el wrap con <leader>w
+vim.keymap.set("n", "<leader>uw", function()
+    -- Verifica el estado actual y cambia
+    if vim.wo.wrap then
+        vim.wo.wrap = false
+        print("Wrap Disable")
+    else
+        vim.wo.wrap = true
+        print("Wrap Enabled ")
+    end
+end, { desc = "Toggle Wrap" })
+
 local signs = { Error = "", Warn = "", Hint = "󱠂", Info = "" }
 
 for type, icon in pairs(signs) do

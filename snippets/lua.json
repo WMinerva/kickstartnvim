@@ -1,0 +1,192 @@
+{
+  "TIC-80 print": {
+    "prefix": "print",
+    "body": [
+      "print(\"${1:text}\"${2:,${3:x},${4:y},${5:color}${6:,${7:fixed},${8:scale}}})",
+      "$0"
+    ],
+    "description": "Print string with system font TIC-80"
+  },
+  //font - Print string with font defined in foreground sprites
+  "TIC-80 clip": {
+    "prefix": "clip",
+    "body": ["clip(${1:${2:x},${3:y},${4:width},${5:height}})", "$0"],
+    "description": "Set screen clipping region TIC-80"
+  },
+  "TIC-80 cls": {
+    "prefix": "cls",
+    "body": ["cls(${1:color})", "$0"],
+    "description": "Clear the screen TIC-80"
+  },
+  "TIC-80 pix": {
+    "prefix": "pix",
+    "body": ["pix(${1:x},${2:y},${3:color})", "$0"],
+    "description": "Set/Get pixel color on the screen TIC-80"
+  },
+  "TIC-80 line": {
+    "prefix": "line",
+    "body": [
+      "line(${1:start_x},${2:start_y},${3:end_x},${4:end_y},${5:color})",
+      "$0"
+    ],
+    "description": "Draw line TIC-80"
+  },
+  "TIC-80 rect": {
+    "prefix": "rect",
+    "body": ["rect(${1:x},${2:y},${3:width},${4:height},${5:color})", "$0"],
+    "description": "Draw filled rectangle TIC-80"
+  },
+  "TIC-80 rectb": {
+    "prefix": "rect",
+    "body": ["rectb(${1:x},${2:y},${3:width},${4:height},${5:color})", "$0"],
+    "description": "Draw rectangle border TIC-80"
+  },
+  "TIC-80 circ": {
+    "prefix": "circ",
+    "body": ["circ(${1:x},${2:y},${3:radius},${4:color})", "$0"],
+    "description": "Filled circle TIC-80"
+  },
+  "TIC-80 circb": {
+    "prefix": "circb",
+    "body": ["circb(${1:x},${2:y},${3:radius},${4:color})", "$0"],
+    "description": "Draw filled circle TIC-80"
+  },
+  "TIC-80 spr": {
+    "prefix": "spr",
+    "body": [
+      "spr(${1:id},${2:x},${3:y}${4:,${5:colorkey},${6:scale},${7:flip},${8:rotate},${9:width,height}})",
+      "$0"
+    ],
+    "description": "Draw sprite by ID, can rotate or flip TIC-80"
+  },
+  "TIC-80 btn": {
+    "prefix": "btn",
+    "body": ["btn(${1:id})"],
+    "description": "Get gamepad button state in current frame TIC-80"
+  },
+  "TIC-80 btnp": {
+    "prefix": "btnp",
+    "body": ["btnp(${1:id})"],
+    "description": "Get gamepad button state according to previous frame TIC-80"
+  },
+  "TIC-80 sfx": {
+    "prefix": "sfx",
+    "body": [
+      "sfx(${1:id}${2:,${3:note},${4:duration},${5:channel},${6:volume},${7:speed}})"
+    ],
+    "description": "Play SFX by ID on specific channel TIC-80"
+  },
+  "TIC-80 map": {
+    "prefix": "map",
+    "body": [
+      "map(${1:cellx},${2:celly},${3:cellwidth},${4:cellheight},${5:screenx},${6:screeny}${7:,${8:colorkey},${9:scale},${10:remap}})",
+      "$0"
+    ],
+    "description": "Draw map region on the screen TIC-80"
+  },
+  "TIC-80 mget": {
+    "prefix": "mget",
+    "body": ["mget(${1:cellx},${2:celly})"],
+    "description": "Get map tile index TIC-80"
+  },
+  "TIC-80 mset": {
+    "prefix": "mset",
+    "body": ["mset(${1:cellx},${2:celly},${3:id})", "$0"],
+    "description": "Set map tile index TIC-80"
+  },
+  "TIC-80 music": {
+    "prefix": "music",
+    "body": ["music(${1:id})", "$0"],
+    "description": "Play music track by ID TIC-80"
+  },
+  "TIC-80 peek": {
+    "prefix": "peek",
+    "body": ["peek(${1:address})", "$0"],
+    "description": "Read a byte value from RAM TIC-80"
+  },
+  "TIC-80 poke": {
+    "prefix": "poke",
+    "body": ["poke(${1:address},${2:value})", "$0"],
+    "description": "Write a byte value to RAM TIC-80"
+  },
+  "TIC-80 peek4": {
+    "prefix": "peek4",
+    "body": ["peek4(${1:address})", "$0"],
+    "description": "Read a half byte value from RAM TIC-80"
+  },
+  "TIC-80 poke4": {
+    "prefix": "poke4",
+    "body": ["poke4(${1:address},${2:value})", "$0"],
+    "description": "Write a half byte value to RAM TIC-80"
+  },
+  "TIC-80 memcpy": {
+    "prefix": "memcpy",
+    "body": ["memcpy(${1:toaddress},${2:fromadress},${3:length})", "$0"],
+    "description": "!Copy bytes in RAM TIC-80"
+  },
+  "TIC-80 memset": {
+    "prefix": "memset",
+    "body": ["memset(${1:address},${2:value},${3:length})", "$0"],
+    "description": "!Set byte values in RAM TIC-80"
+  },
+  "TIC-80 pmem": {
+    "prefix": "pmem",
+    "body": ["pmem(${1:index},${2:value})", "$0"],
+    "description": "Save integer value to persistent memory TIC-80"
+  },
+  "TIC-80 trace": {
+    "prefix": "trace",
+    "body": ["trace(${1:text},${2:color})", "$0"],
+    "description": "Trace string to the Console TIC-80"
+  },
+  "TIC-80 time": {
+    "prefix": "time",
+    "body": ["time()"],
+    "description": "Returns how many ticks passed from game started TIC-80"
+  },
+  "TIC-80 mouse": {
+    "prefix": "mouse",
+    "body": ["${1:mx},${2:my},${3:mp}=mouse()", "$0"],
+    "description": "Get XY and press state of mouse/touch TIC-80"
+  },
+  "TIC-80 tri": {
+    "prefix": "tri",
+    "body": [
+      "tri(${1:x1},${2:y1},${3:x2},${4:y2},${5:x3},${6:y3},${7:color})",
+      "$0"
+    ],
+    "description": "Draw filled triangle TIC-80"
+  },
+
+  // Special functions
+  "TIC-80 TIC": {
+    "prefix": "tic",
+    "body": ["function TIC()", "\t$0", "end"],
+    "description": "Main update function TIC-80"
+  },
+  "TIC-80 scanline": {
+    "prefix": "scanline",
+    "body": ["function scanline(scnline)", "\t$0", "end"],
+    "description": "Line update function TIC-80"
+  },
+  "TIC-80 init": {
+    "prefix": "init",
+    "body": ["function init()", "\t$0", "end", "", "init()"],
+    "description": "Init function TIC-80"
+  },
+
+  // Cartridge metadata
+  "TIC-80 cartridge metadata": {
+    "prefix": "ticmeta",
+    "body": [
+      "-- title:  ${1:game title}",
+      "-- author: ${2:game developer}",
+      "-- desc:   ${3:short description}",
+      "-- script: ${4:lua}",
+      "${5:-- pal:    ${6:DB16}}",
+      "${7:-- input: mouse}",
+      "$0"
+    ],
+    "description": "Cartridge metadata TIC-80"
+  }
+}

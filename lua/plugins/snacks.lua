@@ -2,26 +2,18 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    -- config = function()
-    --     dofile(vim.g.base46_cache .. "snacks")
-    -- end,
     opts = {
-        -- dofile(vim.g.base46_cache .. "snacks"),
-        -- picker = {
-        --     sources = {
-        --         explorer = {
-        --             layout = { layout = { position = "right" } },
-        --         },
-        --     },
-        -- },
-        animate = {
-            enabled = true,
-            -- duration = 20, -- ms per step
-            -- easing = "linear",
-            -- fps = 60,
+        scroll = {},
+        picker = {
+            enabled = false,
+            -- sources = {
+            --     explorer = {
+            --         layout = { layout = { position = "right" } },
+            --     },
+            -- },
         },
         bigfile = { enabled = true },
-        indent = { enabled = true },
+        -- indent = { enabled = true },
         dashboard = {
             enabled = true,
             preset = {
@@ -50,12 +42,13 @@ return {
                 ╚═╝  ╚═══╝ ╚═════╝    ╚═╝         ╚═══╝  ╚══════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
             ]],
                 keys = {
-                    { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+                    { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                    { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                    { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                    { icon = " ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
+                    { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
                     { icon = " ", key = "p", desc = "Leet Code", action = ":Leet" },
-                    { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+                    { icon = " ", key = "c", desc = "Config", action = "<leader>fc" },
+                    -- { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
                     { icon = " ", key = "q", desc = "Quit", action = ":qa" },
@@ -82,20 +75,12 @@ return {
                 { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 3, padding = { 2, 1 } },
             },
         },
-        notifier = { enabled = true },
+        notifier = { enabled = true, top_down = false, style = "compact" },
         quickfile = { enabled = true },
         statuscolumn = { enabled = true },
         -- input = { enabled = true },
         words = { enabled = true },
-        -- styles = {
-        --     notification = {
-        --         wo = { wrap = true }, -- Wrap notifications
-        --     },
-        -- },
     },
-    -- config = function(_, opts)
-    --     dofile(vim.g.base46_cache .. "snacks")
-    -- end,
     keys = {
         {
             "<leader>g",
@@ -109,6 +94,7 @@ return {
             function()
                 Snacks.picker.explorer()
             end,
+            desc = "Explorer Tree",
         },
     },
 }

@@ -28,8 +28,8 @@ return {
             position = "right",
         },
         storage = {
-            home = "~/Escritorio/workspace/competitive_programming/leetcode/",
-            cache = "~/Escritorio/workspace/competitive_programming/cache/",
+            home = "~/Workspace/competitive_programming/leetcode/",
+            cache = "~/Workspace/competitive_programming/cache/",
         },
     },
 }

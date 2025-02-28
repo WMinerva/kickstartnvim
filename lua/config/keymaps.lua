@@ -8,10 +8,10 @@ map("n", "<leader>h", function()
     Snacks.notifier.show_history(opts)
 end, { desc = "Show Notification" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
-map("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+map("n", "<leader>qq", ":q<CR>", { desc = "Quit" })
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 -- Diagnostic keymaps
-map("n", "<leader>x", vim.diagnostic.setloclist, { desc = "Open diagnostic Quickfix list" })
+map("n", "<leader>xq", vim.diagnostic.setloclist, { desc = "Open diagnostic Quickfix list" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -23,6 +23,9 @@ map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
 map("n", "<leader>cc", ":RunCode<CR>", { desc = "Run Code" })
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
+
+map("n", "<leader>cx", ":Copilot disable<CR>", opts)
+map("n", "<leader>cz", ":Copilot enable<CR>", opts)
 --LeetCode
 map("n", "<leader>ce", ":Leet list difficulty=easy<CR>", { desc = "LeetCode Easy" })
 map("n", "<leader>cn", ":Leet list difficulty=medium<CR>", { desc = "LeetCode Medium" })
