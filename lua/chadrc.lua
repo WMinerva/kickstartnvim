@@ -24,7 +24,7 @@ M.lsp = {
 }
 M.ui = {
     tabufline = {
-        enabled = false,
+        enabled = true,
     },
     -- cmp = {
     --     lspkind_text = true,

@@ -7,7 +7,6 @@
     ],
     "description": "Print string with system font TIC-80"
   },
-  //font - Print string with font defined in foreground sprites
   "TIC-80 clip": {
     "prefix": "clip",
     "body": ["clip(${1:${2:x},${3:y},${4:width},${5:height}})", "$0"],
@@ -158,7 +157,6 @@
     "description": "Draw filled triangle TIC-80"
   },
 
-  // Special functions
   "TIC-80 TIC": {
     "prefix": "tic",
     "body": ["function TIC()", "\t$0", "end"],
@@ -174,8 +172,6 @@
     "body": ["function init()", "\t$0", "end", "", "init()"],
     "description": "Init function TIC-80"
   },
-
-  // Cartridge metadata
   "TIC-80 cartridge metadata": {
     "prefix": "ticmeta",
     "body": [
