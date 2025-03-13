@@ -2,18 +2,19 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    -- config = function() end,
     opts = {
         scroll = {},
-        picker = {
-            enabled = false,
-            -- sources = {
-            --     explorer = {
-            --         layout = { layout = { position = "right" } },
-            --     },
-            -- },
-        },
+        -- picker = {
+        --     enabled = false,
+        --     -- sources = {
+        --     --     explorer = {
+        --     --         layout = { layout = { position = "right" } },
+        --     --     },
+        --     -- },
+        -- },
         bigfile = { enabled = true },
-        -- indent = { enabled = true },
+        indent = { enabled = true },
         dashboard = {
             enabled = true,
             preset = {
@@ -89,12 +90,12 @@ return {
             end,
             desc = "Lazygit",
         },
-        {
-            "<leader>z",
-            function()
-                Snacks.picker.explorer()
-            end,
-            desc = "Explorer Tree",
-        },
+        -- {
+        --     "<leader>z",
+        --     function()
+        --         Snacks.picker.explorer()
+        --     end,
+        --     desc = "Explorer Tree",
+        -- },
     },
 }

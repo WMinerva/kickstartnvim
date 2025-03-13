@@ -14,7 +14,7 @@ return {
                 },
             },
             config = function()
-                -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+                require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
                 require("luasnip.loaders.from_vscode").lazy_load()
                 -- local ls = require("luasnip")
                 -- local s = ls.snippet

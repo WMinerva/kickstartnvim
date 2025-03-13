@@ -15,7 +15,7 @@ M.base46 = {
     },
     integrations = {
         "navic",
-        -- "snacks",
+        -- "Snacks",
     },
     -- lsp_semantic_tokens = false,
 }

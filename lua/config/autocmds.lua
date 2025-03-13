@@ -1,5 +1,13 @@
 --  See `:help lua-guide-autocommands`
---
+--Nvum tree auto close
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--     nested = true,
+--     callback = function()
+--         if #vim.api.nvim_list_bufs() == 1 and vim.bo.filetype == "NvimTree_1" then
+--             vim.cmd("quit")
+--         end
+--     end,
+-- })
 -- Buffers in numeral 1-9
 -- require("base46").load_all_highlights()
 
