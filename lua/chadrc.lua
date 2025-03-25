@@ -19,18 +19,18 @@ M.base46 = {
     },
     -- lsp_semantic_tokens = false,
 }
-M.lsp = {
-    -- signature = false,
-}
+-- M.lsp = {
+-- signature = false,
+-- }
 M.ui = {
     tabufline = {
         enabled = true,
     },
-    -- cmp = {
-    --     lspkind_text = true,
-    --     icons_left = true,
-    --     style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
-    -- },
+    cmp = {
+        lspkind_text = true,
+        icons_left = true,
+        style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
+    },
     statusline = {
         theme = "vscode_colored",
         -- separator_style = "round",

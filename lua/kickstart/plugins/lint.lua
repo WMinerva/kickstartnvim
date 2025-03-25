@@ -4,7 +4,7 @@ return { -- Linting
     config = function()
         local lint = require("lint")
         lint.linters_by_ft = {
-            markdown = { "markdownlint" },
+            -- markdown = { "markdownlint" },
             javascript = { "eslint_d" },
             bash = { "shellcheck" },
             sh = { "shellcheck" },

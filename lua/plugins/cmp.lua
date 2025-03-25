@@ -1,5 +1,5 @@
--- local options = { -- Autocompletion
-return {
+local options = { -- Autocompletion
+    -- return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
@@ -149,8 +149,8 @@ return {
         })
     end,
 }
--- options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
---
--- require("cmp").setup(options)
---
--- return options
+options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+
+require("cmp").setup(options)
+
+return options

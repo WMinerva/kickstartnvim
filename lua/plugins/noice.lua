@@ -8,7 +8,7 @@ return {
         cmdline = {
             opts = {
                 -- relative = 'editor',
-                position = { row = "15%", col = "50%" },
+                position = { row = "10%", col = "50%" },
             },
         },
         lsp = {

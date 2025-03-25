@@ -1,8 +1,13 @@
 return {
     "xeluxee/competitest.nvim",
-    cmd = { "CompetiTest receive problem", "CompetiTest run" },
+    event = "VeryLazy",
+    cmd = { "CompetiTest receive problem", "CompetiTest run", "CompetiTest add_testcase", "CompetiTest receive testcases" },
     dependencies = "MunifTanjim/nui.nvim",
     opts = {
+        runner_ui = {
+            interface = "split",
+        },
+        testcases_directory = "testcases/",
         testcases_use_single_file = true,
         received_files_extension = "py",
         received_problems_path = "$(CWD)/Workspace/competitive_programming/codeForces/Solute/$(PROBLEM).$(FEXT)",

@@ -1,6 +1,7 @@
 return {
     {
         "SmiteshP/nvim-navic",
+        event = "VeryLazy",
         config = function()
             dofile(vim.g.base46_cache .. "navic")
             require("nvim-navic").setup({
