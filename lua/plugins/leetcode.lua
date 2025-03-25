@@ -32,4 +32,16 @@ return {
             cache = "~/Workspace/competitive_programming/cache/",
         },
     },
+    keys = {
+        --LeetCode
+        { "<leader>ce", ":Leet list difficulty=easy<CR>", desc = "LeetCode Easy" },
+        { "<leader>cn", ":Leet list difficulty=medium<CR>", desc = "LeetCode Medium" },
+        { "<leader>ch", ":Leet list difficulty=hard<CR>", desc = "LeetCode Hard" },
+        { "<leader>cl", ":Leet lang<CR>", desc = "LeetCode Language" },
+        { "<leader>cw", ":Leet open<CR>", desc = "LeetCode Open Web" },
+        { "<leader>ct", ":Leet run<CR>", desc = "LeetCode Run" },
+        { "<leader>ci", ":Leet info<CR>", desc = "LeetCode Info" },
+        { "<leader>cg", ":Leet submit<CR>", desc = "LeetCode Submit" },
+        { "<leader>co", ":Leet console<CR>", desc = "LeetCode Console" },
+    },
 }

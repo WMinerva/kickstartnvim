@@ -24,7 +24,7 @@ vim.opt.mouse = "a"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.opt.termguicolors = true
-vim.opt.numberwidth = 4
+vim.opt.numberwidth = 5
 vim.opt.fillchars = {
     -- foldopen = "",
     -- foldclose = "",
@@ -77,7 +77,7 @@ vim.opt.list = true
 vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 vim.o.laststatus = 3
 
 -- Minimal number of screen lines to keep above and below the cursor.

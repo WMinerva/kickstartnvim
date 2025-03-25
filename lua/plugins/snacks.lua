@@ -90,6 +90,14 @@ return {
             end,
             desc = "Lazygit",
         },
+        {
+            "<leader>h",
+            function()
+                Snacks.notifier.show_history(opts)
+            end,
+            desc = "Show Notification",
+        },
+
         -- {
         --     "<leader>z",
         --     function()

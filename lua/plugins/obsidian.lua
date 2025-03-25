@@ -27,4 +27,12 @@ return {
 
         -- see below for full list of options 👇
     },
+    keys = {
+        --Obsidian
+        { "<leader>on", ":ObsidianNew<CR> ", desc = "New Obsidian Note" },
+        { "<leader>ot", ":ObsidianTags<CR>", desc = "Obsidian Tags" },
+        { "<leader>os", ":ObsidianSearch<CR>", desc = "Obsidian Search" },
+        { "<leader>oo", ":ObsidianToggleCheckbox<CR>", desc = "Obsidian Toggle Checkbox" },
+        { "<leader>ox", ":ObsidianCheck<CR>", desc = "Obsidian Check" },
+    },
 }

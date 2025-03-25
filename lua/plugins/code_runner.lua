@@ -25,4 +25,7 @@ return {
             },
         })
     end,
+    keys = {
+        { "<leader>cc", ":RunCode<CR>", desc = "Run Code" },
+    },
 }

@@ -51,8 +51,8 @@ return { -- Linting
                 lint.try_lint()
             end,
         })
-        vim.keymap.set("n", "<leader>xl", function()
-            lint.try_lint()
-        end, { desc = "Trigger linting" })
+        -- vim.keymap.set("n", "<leader>xl", function()
+        --     lint.try_lint()
+        -- end, { desc = "Trigger linting" })
     end,
 }
