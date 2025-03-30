@@ -41,6 +41,7 @@ local options = { -- Autocompletion
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
+        "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
         {
             "zbirenbaum/copilot-cmp",
@@ -67,6 +68,9 @@ local options = { -- Autocompletion
                 end,
             },
             completion = { completeopt = "menu,menuone,noinsert" },
+            experimental = {
+                ghost_text = true,
+            },
             -- completion = { completeopt = "menu,menuone,noselect" },
             -- formatting = { fields = { "kind", "menu","abbr" } },
 
@@ -145,6 +149,12 @@ local options = { -- Autocompletion
                 { name = "path" },
                 { name = "cmdline" },
                 -- { name = "supermaven" ,group_index = 2},
+            },
+        })
+        cmp.setup.filetype({ "sql" }, {
+            sources = {
+                { name = "vim-dadbod-completion" },
+                { name = "buffer" },
             },
         })
     end,
