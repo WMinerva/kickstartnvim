@@ -45,7 +45,7 @@ local options = { -- Autocompletion
         "hrsh7th/cmp-cmdline",
         {
             "zbirenbaum/copilot-cmp",
-            dependencies = "copilot.lua",
+            -- dependencies = "copilot.lua",
             opts = {},
             config = function(_, opts)
                 local copilot_cmp = require("copilot_cmp")
@@ -132,19 +132,19 @@ local options = { -- Autocompletion
                 },
                 {
                     name = "copilot",
-                    -- group_index = 3,
-                    priority = 400,
+                    group_index = 1,
+                    priority = 100,
                 },
                 {
                     name = "nvim_lsp",
-                    priority = 900,
+                    -- priority = 900,
                     -- group_index = 2,
                 },
                 {
                     name = "luasnip",
                     -- group_index = 1,
 
-                    priority = 1000,
+                    -- priority = 1000,
                 },
                 { name = "path" },
                 { name = "cmdline" },

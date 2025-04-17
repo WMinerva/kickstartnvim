@@ -11,11 +11,6 @@ return {
             })
         end,
     },
-    -- {
-    --     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    --     enabled = false,
-    --     opt = {},
-    -- },
     {
         "b0o/incline.nvim",
         event = "VeryLazy",

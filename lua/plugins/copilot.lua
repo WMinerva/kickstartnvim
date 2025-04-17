@@ -1,9 +1,9 @@
 return {
     {
         "zbirenbaum/copilot.lua",
-        event = "BufReadPost",
         cmd = "Copilot",
         build = ":Copilot auth",
+        event = "BufReadPost",
         opts = {
             suggestion = { enabled = false },
             panel = { enabled = false },
