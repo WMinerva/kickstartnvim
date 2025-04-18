@@ -36,7 +36,8 @@ return {
     -- See `:help gitsigns` to understand what the configuration keys do
     { -- Adds git related signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
-        event = "BufEnter",
+        -- event = "BufEnter",
+        lazy = true,
         opts = {
             numhl = true,
             signcolumn = false,
@@ -64,18 +65,6 @@ return {
     --
     -- Use the `dependencies` key to specify the dependencies of a particular plugin
     -- LSP Plugins
-    {
-        -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
-        -- used for completion, annotations and signatures of Neovim apis
-        "folke/lazydev.nvim",
-        ft = "lua",
-        opts = {
-            library = {
-                -- Load luvit types when the `vim.uv` word is found
-                { path = "luvit-meta/library", words = { "vim%.uv" } },
-            },
-        },
-    },
     { "Bilal2453/luvit-meta", lazy = true },
     -- { -- You can easily change to a different colorscheme.
     --     -- Change the name of the colorscheme plugin below, and then

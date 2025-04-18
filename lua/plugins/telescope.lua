@@ -3,7 +3,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     event = "VimEnter",
     branch = "0.1.x",
     dependencies = {
-        "nvim-lua/plenary.nvim",
+        -- "nvim-lua/plenary.nvim",
         { -- If encountering errors, see telescope-fzf-native README for installation instructions
             "nvim-telescope/telescope-fzf-native.nvim",
 
@@ -17,12 +17,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
                 return vim.fn.executable("make") == 1
             end,
         },
-        { "nvim-telescope/telescope-ui-select.nvim" },
+        -- { "nvim-telescope/telescope-ui-select.nvim" },
         { "nvim-telescope/telescope-file-browser.nvim" },
         -- { "jonarrien/telescope-cmdline.nvim" },
 
         -- Useful for getting pretty icons, but requires a Nerd Font.
-        { "nvim-tree/nvim-web-devicons" },
+        -- { "nvim-tree/nvim-web-devicons" },
     },
     keys = {
         {
@@ -67,18 +67,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
             --   },
             -- },
             -- pickers = {}
-            extensions = {
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown(),
-                },
-            },
+            -- extensions = {
+            --     ["ui-select"] = {
+            --         require("telescope.themes").get_dropdown(),
+            --     },
+            -- },
         })
         require("telescope").load_extension("file_browser")
         -- require("telescope").load_extension("cmdline")
 
         -- Enable Telescope extensions if they are installed
         pcall(require("telescope").load_extension, "fzf")
-        pcall(require("telescope").load_extension, "ui-select")
+        -- pcall(require("telescope").load_extension, "ui-select")
 
         -- See `:help telescope.builtin`
         local builtin = require("telescope.builtin")
@@ -94,13 +94,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
         vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
         -- Slightly advanced example of overriding default behavior and theme
-        vim.keymap.set("n", "<leader>sb", function()
-            -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-            builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-                winblend = 10,
-                previewer = false,
-            }))
-        end, { desc = "Fuzzily search in current buffer" })
+        -- vim.keymap.set("n", "<leader>sb", function()
+        --     -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+        --     builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        --         winblend = 10,
+        --         previewer = false,
+        --     }))
+        -- end, { desc = "Fuzzily search in current buffer" })
 
         -- It's also possible to pass additional configuration options.
         --  See `:help telescope.builtin.live_grep()` for information about particular keys

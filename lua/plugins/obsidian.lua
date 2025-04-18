@@ -10,9 +10,9 @@ return {
     version = "*", -- recommended, use latest release instead of latest commit
     -- lazy = false,
     ft = "markdown",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
+    -- dependencies = {
+    --     "nvim-lua/plenary.nvim",
+    -- },
     opts = {
         workspaces = {
             -- {
