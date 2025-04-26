@@ -26,7 +26,7 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-javaagent:" .. home .. "/.local/share/nvsc/mason/share/jdtls/lombok.jar",
+        "-javaagent:" .. home .. "/.local/share/nvim/mason/share/jdtls/lombok.jar",
         "-Xmx4g",
         "--add-modules=ALL-SYSTEM",
         "--add-opens",
@@ -36,9 +36,9 @@ local config = {
 
         -- Eclipse jdtls location
         "-jar",
-        home .. "/.local/share/nvsc/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
+        home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
         "-configuration",
-        home .. "/.local/share/nvsc/mason/packages/jdtls/config_" .. system_os,
+        home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. system_os,
         "-data",
         workspace_dir,
     },
