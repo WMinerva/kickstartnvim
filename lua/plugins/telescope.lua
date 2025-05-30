@@ -18,28 +18,28 @@ return { -- Fuzzy Finder (files, lsp, etc)
             end,
         },
         -- { "nvim-telescope/telescope-ui-select.nvim" },
-        { "nvim-telescope/telescope-file-browser.nvim" },
+        -- { "nvim-telescope/telescope-file-browser.nvim" },
         -- { "jonarrien/telescope-cmdline.nvim" },
 
         -- Useful for getting pretty icons, but requires a Nerd Font.
         -- { "nvim-tree/nvim-web-devicons" },
     },
-    keys = {
-        {
-            "<Leader>e",
-            -- ":Telescope file_browser path=%:p:h<cr>",
-            function()
-                require("telescope").extensions.file_browser.file_browser({
-                    path = "%:p:h",
-                    select_buffer = true,
-                    initial_mode = "normal",
-                    hidden = true,
-                    -- border = false,
-                })
-            end,
-            desc = "Browse Files",
-        },
-    },
+    -- keys = {
+    --     {
+    --         "<Leader>e",
+    --         -- ":Telescope file_browser path=%:p:h<cr>",
+    --         function()
+    --             require("telescope").extensions.file_browser.file_browser({
+    --                 path = "%:p:h",
+    --                 select_buffer = true,
+    --                 initial_mode = "normal",
+    --                 hidden = true,
+    --                 -- border = false,
+    --             })
+    --         end,
+    --         desc = "Browse Files",
+    --     },
+    -- },
     config = function()
         -- [[ Configure Telescope ]]
         -- See `:help telescope` and `:help telescope.setup()`
@@ -73,7 +73,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             --     },
             -- },
         })
-        require("telescope").load_extension("file_browser")
+        -- require("telescope").load_extension("file_browser")
         -- require("telescope").load_extension("cmdline")
 
         -- Enable Telescope extensions if they are installed

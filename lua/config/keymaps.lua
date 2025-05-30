@@ -3,6 +3,9 @@ local opts = { noremap = true, silent = true }
 --  See `:help map()`
 --
 map("n", "<S-l>", vim.cmd.bnext, opts)
+map("n", "<tab>", function()
+    require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>qq", ":q<CR>", { desc = "Quit" })
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
@@ -50,7 +53,7 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 --windows
-map("n", "<leader>db", "<cmd>bd<CR>", { desc = "Delete Buffer", remap = true })
+map("n", "<leader>db", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Delete Buffer", remap = true })
 map("n", "<leader>dw", "<C-W>c", { desc = "Delete Window", remap = true })
 -- map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })

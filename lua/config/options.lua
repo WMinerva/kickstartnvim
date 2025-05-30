@@ -79,6 +79,10 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = false
 vim.o.laststatus = 3
+-- vim.opt.winbar = "%=%m %t"
+-- vim.opt.winbar = "%=%m %t"
+-- local navic = require("nvim-navic")
+-- vim.wo.winbar = navic.get_location()
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8

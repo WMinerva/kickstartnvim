@@ -7,6 +7,9 @@ M.base46 = {
     hl_override = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
+        ["@variable"] = { fg = "nord_blue" },
+        ["@operator"] = { fg = "red" },
+        ["@number"] = { fg = "green" },
     },
     hl_add = {
         -- WinBar = { bg = "NONE" },
@@ -19,18 +22,18 @@ M.base46 = {
     },
     -- lsp_semantic_tokens = false,
 }
--- M.lsp = {
--- signature = false,
--- }
+M.lsp = {
+    signature = true,
+}
 M.ui = {
     tabufline = {
-        enabled = true,
+        enabled = false,
     },
-    cmp = {
-        lspkind_text = true,
-        icons_left = true,
-        style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
-    },
+    -- cmp = {
+    --     lspkind_text = true,
+    --     icons_left = false,
+    --     style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
+    -- },
     statusline = {
         theme = "vscode_colored",
         -- separator_style = "round",

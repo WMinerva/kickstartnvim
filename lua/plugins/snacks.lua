@@ -6,12 +6,28 @@ return {
     opts = {
         scroll = {},
         -- picker = {
-        --     enabled = false,
-        --     -- sources = {
-        --     --     explorer = {
-        --     --         layout = { layout = { position = "right" } },
-        --     --     },
-        --     -- },
+        --     -- enabled = false,
+        --     sources = {
+        --         explorer = {
+        --             -- layout = { layout = { position = "right" } },
+        --             layout = {
+        --                 { preview = true },
+        --                 layout = {
+        --                     box = "horizontal",
+        --                     width = 0.8,
+        --                     height = 0.8,
+        --                     {
+        --                         box = "vertical",
+        --                         border = "rounded",
+        --                         title = "{source} {live} {flags}",
+        --                         title_pos = "center",
+        --                         { win = "input", height = 1, border = "bottom" },
+        --                     },
+        --                     { win = "preview", border = "rounded", width = 0.7, title = "{preview}" },
+        --                 },
+        --             },
+        --         },
+        --     },
         -- },
         bigfile = { enabled = true },
         indent = { enabled = true },
@@ -79,7 +95,7 @@ return {
         notifier = { enabled = true, top_down = false, style = "compact" },
         quickfile = { enabled = true },
         statuscolumn = { enabled = true },
-        -- input = { enabled = true },
+        input = { enabled = true },
         words = { enabled = true },
     },
     keys = {
@@ -98,12 +114,14 @@ return {
             desc = "Show Notification",
         },
 
-        -- {
-        --     "<leader>z",
-        --     function()
-        --         Snacks.picker.explorer()
-        --     end,
-        --     desc = "Explorer Tree",
-        -- },
+        {
+            "<leader>e",
+            function()
+                Snacks.picker.explorer({
+                    cwd = vim.fn.expand("%:p:h"),
+                })
+            end,
+            desc = "Explorer Tree",
+        },
     },
 }

@@ -1,8 +1,8 @@
 return {
     {
         "SmiteshP/nvim-navic",
-        -- event = "VeryLazy",
-        lazy = true,
+        event = "BufAdd",
+        -- lazy = true,
         config = function()
             dofile(vim.g.base46_cache .. "navic")
             require("nvim-navic").setup({
@@ -14,8 +14,9 @@ return {
     },
     {
         "b0o/incline.nvim",
-        -- event = "VeryLazy",
-        lazy = true,
+        -- opts = {},
+        event = "BufAdd",
+        -- lazy = true,
         config = function()
             local helpers = require("incline.helpers")
             local devicons = require("nvim-web-devicons")

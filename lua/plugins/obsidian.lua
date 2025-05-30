@@ -1,5 +1,6 @@
 return {
-    "epwalsh/obsidian.nvim",
+    -- "epwalsh/obsidian.nvim",
+    "obsidian-nvim/obsidian.nvim",
     cmd = {
         "ObsidianNew",
         "ObsidianTags",
@@ -21,7 +22,7 @@ return {
             -- },
             {
                 name = "workspace",
-                path = "~/Workspace/notes/",
+                path = "~/Workspace/Notes/",
             },
         },
 

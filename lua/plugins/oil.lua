@@ -1,57 +1,57 @@
 return {
-    "stevearc/oil.nvim",
-    lazy = false,
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    -- opts = {},
-    config = function()
-        local oil = require("oil")
-        oil.setup({
-            -- Configuración básica
-            view_options = {
-                show_hidden = true,
-                -- is_always_hidden = function(name, _)
-                --     return name == ".." or name == ".git"
-                -- end,
-            },
-            -- Personalizar cómo se abren los archivos
-            actions = {
-                open_file = function(path)
-                    -- Abrir en ventana principal en lugar de la sidebar
-                    vim.cmd("wincmd l") -- Asume que la sidebar está a la izquierda
-                    vim.cmd("edit " .. path)
-                end,
-            },
-        })
-
-        -- Función para alternar la sidebar
-        local oil_sidebar_visible = false
-        local oil_win_id = nil
-
-        local function toggle_oil_sidebar()
-            if oil_sidebar_visible and oil_win_id and vim.api.nvim_win_is_valid(oil_win_id) then
-                vim.api.nvim_win_close(oil_win_id, true)
-                oil_sidebar_visible = false
-                oil_win_id = nil
-            else
-                vim.cmd("vsplit") -- Crear split vertical
-                vim.cmd("wincmd h") -- Moverse al split izquierdo
-                oil.open() -- Abrir oil
-                oil_win_id = vim.api.nvim_get_current_win()
-
-                -- Configurar apariencia de la sidebar
-                vim.wo.number = false
-                vim.wo.relativenumber = false
-                -- vim.wo.signcolumn = "yes"
-                vim.api.nvim_win_set_width(oil_win_id, 25) -- Ancho de la sidebar
-
-                oil_sidebar_visible = true
-            end
-        end
-
-        -- Keymaps
-        vim.keymap.set("n", "<leader>p", toggle_oil_sidebar, { desc = "Toggle Oil sidebar" })
-        vim.keymap.set("n", "-", toggle_oil_sidebar, { desc = "Toggle Oil sidebar" })
-    end,
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    -- "stevearc/oil.nvim",
+    -- lazy = false,
+    -- ---@module 'oil'
+    -- ---@type oil.SetupOpts
+    -- -- opts = {},
+    -- config = function()
+    --     local oil = require("oil")
+    --     oil.setup({
+    --         -- Configuración básica
+    --         view_options = {
+    --             show_hidden = true,
+    --             -- is_always_hidden = function(name, _)
+    --             --     return name == ".." or name == ".git"
+    --             -- end,
+    --         },
+    --         -- Personalizar cómo se abren los archivos
+    --         actions = {
+    --             open_file = function(path)
+    --                 -- Abrir en ventana principal en lugar de la sidebar
+    --                 vim.cmd("wincmd l") -- Asume que la sidebar está a la izquierda
+    --                 vim.cmd("edit " .. path)
+    --             end,
+    --         },
+    --     })
+    --
+    --     -- Función para alternar la sidebar
+    --     local oil_sidebar_visible = false
+    --     local oil_win_id = nil
+    --
+    --     local function toggle_oil_sidebar()
+    --         if oil_sidebar_visible and oil_win_id and vim.api.nvim_win_is_valid(oil_win_id) then
+    --             vim.api.nvim_win_close(oil_win_id, true)
+    --             oil_sidebar_visible = false
+    --             oil_win_id = nil
+    --         else
+    --             vim.cmd("vsplit") -- Crear split vertical
+    --             vim.cmd("wincmd h") -- Moverse al split izquierdo
+    --             oil.open() -- Abrir oil
+    --             oil_win_id = vim.api.nvim_get_current_win()
+    --
+    --             -- Configurar apariencia de la sidebar
+    --             vim.wo.number = false
+    --             vim.wo.relativenumber = false
+    --             -- vim.wo.signcolumn = "yes"
+    --             vim.api.nvim_win_set_width(oil_win_id, 25) -- Ancho de la sidebar
+    --
+    --             oil_sidebar_visible = true
+    --         end
+    --     end
+    --
+    --     -- Keymaps
+    --     vim.keymap.set("n", "<leader>p", toggle_oil_sidebar, { desc = "Toggle Oil sidebar" })
+    --     vim.keymap.set("n", "-", toggle_oil_sidebar, { desc = "Toggle Oil sidebar" })
+    -- end,
+    -- -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
 }
