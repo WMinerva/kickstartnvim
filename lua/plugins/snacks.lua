@@ -2,12 +2,25 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    -- config = function() end,
     opts = {
         scroll = {},
         picker = {},
         bigfile = { enabled = true },
-        indent = { enabled = true },
+        indent = {
+            indent = {
+                enabled = false,
+            },
+            -- chunk = {
+            --     enabled = true,
+            --     char = {
+            --         horizontal = "─",
+            --         vertical = "│",
+            --         corner_top = "╭",
+            --         corner_bottom = "╰",
+            --         arrow = "─",
+            --     },
+            -- },
+        },
         dashboard = {
             enabled = true,
             preset = {
@@ -72,7 +85,7 @@ return {
         notifier = { enabled = true, top_down = false, style = "compact" },
         quickfile = { enabled = true },
         statuscolumn = { enabled = true },
-        input = { enabled = true },
+        -- input = { enabled = true },
         words = { enabled = true },
     },
     keys = {
