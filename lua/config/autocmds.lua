@@ -11,6 +11,38 @@
 
 -- require("base46").load_all_highlights()
 
+-- Función para saltar al n-ésimo buffer en la lista
+local function goto_nth_buffer(n)
+    -- Obtener buffers válidos (cargados y listados)
+    local valid_buffers = {}
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted and vim.fn.buflisted(buf) == 1 then
+            table.insert(valid_buffers, buf)
+        end
+    end
+
+    -- Ordenar por ID de buffer
+    table.sort(valid_buffers)
+
+    -- Saltar al buffer en posición n
+    if valid_buffers[n] then
+        vim.api.nvim_set_current_buf(valid_buffers[n])
+    else
+        print("Buffer #" .. n .. " no disponible")
+    end
+end
+
+-- Crear autocomandos para los atajos
+for i = 1, 9 do
+    vim.keymap.set("n", "<A-" .. i .. ">", function()
+        goto_nth_buffer(i)
+    end, { desc = "Ir al buffer " .. i })
+end
+
+-- Atajo para el décimo buffer (Alt+0)
+-- vim.keymap.set('n', '<A-0>', function()
+--     goto_nth_buffer(10)
+-- end, {desc = "Ir al buffer 10"})
 -- Buffers in numeral 1-9
 -- for i = 1, 9, 1 do
 --     vim.keymap.set("n", string.format("<A-%s>", i), function()

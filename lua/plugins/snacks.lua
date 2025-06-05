@@ -4,7 +4,7 @@ return {
     lazy = false,
     opts = {
         scroll = {},
-        picker = {},
+        -- picker = {},
         bigfile = { enabled = true },
         indent = {
             indent = {
@@ -109,6 +109,15 @@ return {
             function()
                 Snacks.picker.explorer({
                     cwd = vim.fn.expand("%:p:h"),
+                    layout = {
+                        -- preset = "vscode",
+                        -- preview = true,
+                        -- tree = false,
+                        layout = {
+                            width = 30,
+                            -- position = "right",
+                        },
+                    },
                 })
             end,
             desc = "Explorer Tree",
