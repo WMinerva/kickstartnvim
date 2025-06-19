@@ -54,7 +54,17 @@ return {
         },
 
         -- (Default) Only show the documentation popup when manually triggered
-        completion = { documentation = { auto_show = false }, ghost_text = { enabled = true } },
+        completion = {
+            documentation = {
+                auto_show = true,
+                -- window = { border = "single" },
+            },
+            menu = {
+                scrollbar = false,
+                -- border = "single",
+            },
+            ghost_text = { enabled = true },
+        },
 
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -77,6 +87,7 @@ return {
                 },
             },
         },
+        -- snippets = { preset = "luasnip" },
         signature = { enabled = true },
 
         -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

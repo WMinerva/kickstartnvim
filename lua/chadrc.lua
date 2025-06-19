@@ -15,6 +15,8 @@ M.base46 = {
         -- WinBar = { bg = "NONE" },
         -- WinBarNC = { bg = "NONE" },
         St_porc = { fg = "dark_purple", bg = "statusline_bg" },
+        BlinkCmpMenu = { bg = "black2" },
+        BlinkCmpDoc = { bg = "darker_black" },
     },
     integrations = {
         "navic",
