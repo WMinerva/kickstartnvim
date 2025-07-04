@@ -15,8 +15,21 @@ M.base46 = {
         -- WinBar = { bg = "NONE" },
         -- WinBarNC = { bg = "NONE" },
         St_porc = { fg = "dark_purple", bg = "statusline_bg" },
+        --BLink
         BlinkCmpMenu = { bg = "black2" },
         BlinkCmpDoc = { bg = "darker_black" },
+        --Snacks
+        SnacksPickerTitle = { bg = "red", fg = "black" },
+        SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" },
+        SnacksPickerInput = { bg = "darker_black" },
+        -- SnacksPickerInputTitle = { bg = "red", fg = "red" },
+        -- SnacksPickerPrompt = { fg = "red" },
+        -- SnacksPickerInputSearch = { bg = "red", fg = "red" },
+        SnacksPickerPreview = { bg = "black" },
+        SnacksPickerListCursorLine = { bg = "black2" },
+        SnacksPickerList = { bg = "darker_black" },
+        --WhichKey
+        WhichKeyTitle = { bg = "baby_pink", fg = "none" },
     },
     integrations = {
         "navic",
@@ -29,7 +42,7 @@ M.lsp = {
 }
 M.ui = {
     tabufline = {
-        enabled = false,
+        enabled = true,
     },
     -- cmp = {
     --     lspkind_text = true,

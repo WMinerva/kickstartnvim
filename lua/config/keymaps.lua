@@ -18,16 +18,16 @@ map("n", "<leader>xq", vim.diagnostic.setloclist, { desc = "Open diagnostic Quic
 
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 map("n", "<leader>cx", ":Copilot disable<CR>", opts)
 map("n", "<leader>cz", ":Copilot enable<CR>", opts)
-
---neo-tree
--- map("n", "<leader>df", "<cmd>Neotree toggle<CR>", { desc = "Explorer Neotree" })
-map("n", "<leader>tt", "<cmd>Telescope themes<cr>", { desc = "NvChad Themes" })
+map("n", "<leader>tt", function()
+    require("nvchad.themes").open()
+end, { desc = "NvChad Themes" })
 map("n", "<leader>tc", "<cmd>NvCheatsheet<cr>", { desc = "Cheatsheet" })
 
 -- lazy
