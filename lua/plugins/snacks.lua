@@ -8,7 +8,9 @@ return {
             prompt = "  ",
             layout = {
                 layout = {
-                    border = "none",
+                    width = 0.8,
+                    height = 0.8,
+                    -- { win = "preview", ti width = 0.4 },
                 },
                 -- preset = "telescope",
             },

@@ -30,6 +30,7 @@ M.base46 = {
         SnacksPickerList = { bg = "darker_black" },
         --WhichKey
         WhichKeyTitle = { bg = "baby_pink", fg = "none" },
+        NoiceCmdlinePopupTitleCmdline = { bg = "green", fg = "black" },
     },
     integrations = {
         "navic",
