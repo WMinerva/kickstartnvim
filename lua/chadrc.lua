@@ -18,7 +18,7 @@ M.base46 = {
         --BLink
         BlinkCmpMenu = { bg = "black2" },
         BlinkCmpDoc = { bg = "darker_black" },
-        --Snacks
+        --Snacks Picker
         SnacksPickerTitle = { bg = "red", fg = "black" },
         SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" },
         SnacksPickerInput = { bg = "darker_black" },
@@ -29,8 +29,19 @@ M.base46 = {
         SnacksPickerListCursorLine = { bg = "black2" },
         SnacksPickerList = { bg = "darker_black" },
         --WhichKey
-        WhichKeyTitle = { bg = "baby_pink", fg = "none" },
+        WhichKeyTitle = { bg = "baby_pink", fg = "black" },
+        -- WhichKeyBorder = { bg = "darker_black", fg = "darker_black" },
+        --Noice
         NoiceCmdlinePopupTitleCmdline = { bg = "green", fg = "black" },
+        NoiceCmdlinePopupTitleLua = { bg = "green", fg = "black" },
+        NoiceCmdlinePopupTitleSearch = { bg = "yellow", fg = "black" },
+        --Snacks Notifier
+        SnacksNotifierTitleWarn = { bg = "yellow", fg = "black" },
+        -- SnacksNotifierBorderWarn = { bg = "black" },
+        SnacksNotifierTitleInfo = { bg = "green", fg = "black" },
+        -- SnacksNotifierBorderInfo = { bg = "red" },
+        SnacksNotifierTitleError = { bg = "red", fg = "black" },
+        -- SnacksNotifierHistoryTitle = { bg = "red", fg = "black" },
     },
     integrations = {
         "navic",

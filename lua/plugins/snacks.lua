@@ -7,12 +7,55 @@ return {
         picker = {
             prompt = "  ",
             layout = {
-                layout = {
-                    width = 0.8,
-                    height = 0.8,
-                    -- { win = "preview", ti width = 0.4 },
+                preset = "default",
+                -- layout = {
+                -- },
+            },
+            layouts = {
+                -- telescope = {
+                --     reverse = false,
+                --     layout = {
+                --         box = "horizontal",
+                --         backdrop = false,
+                --         width = 0.8, -- Cambia el ancho
+                --         height = 0.8,
+                --         border = "none",
+                --         {
+                --             box = "vertical",
+                --             {
+                --                 win = "input",
+                --                 height = 1,
+                --                 border = "rounded",
+                --                 title = "{title} {live} {flags}",
+                --                 title_pos = "center",
+                --             },
+                --             { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+                --         },
+                --         {
+                --             win = "preview",
+                --             title = "{preview:Preview}",
+                --             width = 0.55, -- Cambia el ancho de la vista previa
+                --             border = "rounded",
+                --             title_pos = "center",
+                --         },
+                --     },
+                -- },
+                default = {
+                    layout = {
+                        box = "horizontal",
+                        width = 0.8,
+                        min_width = 120,
+                        height = 0.8,
+                        {
+                            box = "vertical",
+                            border = "rounded",
+                            title = "{title} {live} {flags}",
+                            { win = "input", height = 1, border = "top" },
+                            { win = "list", border = "rounded" },
+                        },
+                        { win = "preview", title = "{preview}", border = "top", width = 0.55 },
+                    },
                 },
-                -- preset = "telescope",
             },
         },
         bigfile = { enabled = true },
