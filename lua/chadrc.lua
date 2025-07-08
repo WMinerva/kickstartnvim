@@ -12,6 +12,7 @@ M.base46 = {
         ["@number"] = { fg = "green" },
     },
     hl_add = {
+        WinSeparator = { bg = "black", fg = "black" },
         -- WinBar = { bg = "NONE" },
         -- WinBarNC = { bg = "NONE" },
         St_porc = { fg = "dark_purple", bg = "statusline_bg" },
@@ -21,11 +22,13 @@ M.base46 = {
         --Snacks Picker
         SnacksPickerTitle = { bg = "red", fg = "black" },
         SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" },
+        -- SnacksPickerBoxBorder = { bg = "black",fg = "black" },
         SnacksPickerInput = { bg = "darker_black" },
-        -- SnacksPickerInputTitle = { bg = "red", fg = "red" },
+        -- SnacksPickerInputTitle = { bg = "black", fg = "black" },
+        -- SnacksPickerBoxTitle = { bg = "black", fg = "black" },
         -- SnacksPickerPrompt = { fg = "red" },
         -- SnacksPickerInputSearch = { bg = "red", fg = "red" },
-        SnacksPickerPreview = { bg = "black" },
+        SnacksPickerPreview = { bg = "darker_black" },
         SnacksPickerListCursorLine = { bg = "black2" },
         SnacksPickerList = { bg = "darker_black" },
         --WhichKey

@@ -143,7 +143,7 @@ return {
     },
     keys = {
         {
-            "<leader>g",
+            "<leader>gg",
             function()
                 Snacks.lazygit()
             end,
@@ -162,6 +162,7 @@ return {
                 Snacks.picker.explorer({
                     cwd = vim.fn.expand("%:p:h"),
                     layout = {
+
                         -- preset = "vscode",
                         -- preview = true,
                         -- tree = false,
