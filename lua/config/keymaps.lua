@@ -17,7 +17,7 @@ map("n", "<leader>xq", vim.diagnostic.setloclist, { desc = "Open diagnostic Quic
 -- is not what someone will guess without a bit more experience.
 
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
+-- map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 
 map("v", "J", ":m '>+1<CR>gv=gv", opts)

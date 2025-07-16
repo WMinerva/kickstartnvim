@@ -11,6 +11,17 @@
 
 -- require("base46").load_all_highlights()
 
+--return to last edit position when opening fikes
+vim.api.nvim_create_autocmd("BufReadPost", {
+    desc = "Return to last edit position when opening files",
+    group = vim.api.nvim_create_augroup("kickstart-return-to-last-edit", { clear = true }),
+    callback = function()
+        local last_pos = vim.api.nvim_buf_get_mark(0, '"')
+        if last_pos[1] > 0 then
+            vim.api.nvim_win_set_cursor(0, last_pos)
+        end
+    end,
+})
 -- Función para saltar al n-ésimo buffer en la lista
 local function goto_nth_buffer(n)
     -- Obtener buffers válidos (cargados y listados)
