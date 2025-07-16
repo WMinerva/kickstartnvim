@@ -139,7 +139,7 @@ return {
         quickfile = { enabled = true },
         statuscolumn = { enabled = true },
         -- input = { enabled = true },
-        -- words = { enabled = true },
+        words = { enabled = true },
     },
     keys = {
         {
@@ -182,13 +182,13 @@ return {
             end,
             desc = "Smart Find Files",
         },
-        {
-            "<leader>,",
-            function()
-                Snacks.picker.buffers()
-            end,
-            desc = "Buffers",
-        },
+        -- {
+        --     "<leader>,",
+        --     function()
+        --         Snacks.picker.buffers()
+        --     end,
+        --     desc = "Buffers",
+        -- },
         {
             "<leader>/",
             function()
@@ -361,13 +361,13 @@ return {
             end,
             desc = "Buffer Lines",
         },
-        {
-            "<leader>sc",
-            function()
-                Snacks.picker.command_history()
-            end,
-            desc = "Command History",
-        },
+        -- {
+        --     "<leader>sc",
+        --     function()
+        --         Snacks.picker.command_history()
+        --     end,
+        --     desc = "Command History",
+        -- },
         {
             "<leader>sC",
             function()
