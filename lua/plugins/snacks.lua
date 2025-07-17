@@ -3,9 +3,18 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+        animate = {},
         scroll = {},
         picker = {
             prompt = "  ",
+            icons = {
+                tree = {
+
+                    vertical = "│ ",
+                    middle = "│ ",
+                    last = "└╴",
+                },
+            },
             layout = {
                 preset = "default",
                 -- layout = {
@@ -174,6 +183,32 @@ return {
                 })
             end,
             desc = "Explorer Tree",
+        },
+        {
+            "<leader>fe",
+            function()
+                Snacks.picker.explorer({
+                    cwd = vim.fn.expand("%:p:h"),
+                    layout = {
+                        preview = true,
+                        layout = {
+                            box = "horizontal",
+                            width = 0.8,
+                            min_width = 120,
+                            height = 0.8,
+                            {
+                                box = "vertical",
+                                border = "rounded",
+                                title = "{title} {live} {flags}",
+                                { win = "input", height = 1, border = "top" },
+                                { win = "list", border = "rounded" },
+                            },
+                            { win = "preview", title = "{preview}", border = "top", width = 0.55 },
+                        },
+                    },
+                })
+            end,
+            desc = "Find Explorer",
         },
         {
             "<leader><space>",
