@@ -2,11 +2,12 @@
   "TIC-80 print": {
     "prefix": "print",
     "body": [
-      "print(\"${1:text}\"${2:,${3:x},${4:y},${5:color}${6:,${7:fixed},${8:scale}}})",
+      "print(\"${1:Texto}\", ${2:x}, ${3:y}, ${4:color}, ${5:bool}, ${6:scale})",
       "$0"
     ],
     "description": "Print string with system font TIC-80"
   },
+
   "TIC-80 clip": {
     "prefix": "clip",
     "body": ["clip(${1:${2:x},${3:y},${4:width},${5:height}})", "$0"],

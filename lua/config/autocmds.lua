@@ -10,7 +10,7 @@
 -- })
 
 -- require("base46").load_all_highlights()
-
+vim.cmd("Copilot disable")
 --return to last edit position when opening fikes
 vim.api.nvim_create_autocmd("BufReadPost", {
     desc = "Return to last edit position when opening files",
