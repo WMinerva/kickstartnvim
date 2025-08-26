@@ -7,12 +7,13 @@ return {
         runner_ui = {
             interface = "split",
         },
-        testcases_directory = "testcases/",
+        -- testcases_directory = "$(CWD)/Workspace/testcases/",
+        -- testcases_directory = "/Workspace/testcases/",
         testcases_use_single_file = true,
         received_files_extension = "py",
         received_problems_path = "$(CWD)/Workspace/competitive_programming/codeForces/Solute/$(PROBLEM).$(FEXT)",
-        received_contests_directory = "$(CWD)/Escritorio/workspace/competitive_programming/codeForces/Solute/",
-        received_contests_problems_path = "$(CWD)/Workspace/competitive_programming/codeForces/Solute/$(PROBLEM).$(FEXT)",
+        -- received_contests_directory = "$(CWD)/Escritorio/workspace/competitive_programming/codeForces/Solute/",
+        -- received_contests_problems_path = "$(CWD)/Workspace/competitive_programming/codeForces/Solute/$(PROBLEM).$(FEXT)",
     },
     keys = {
         { "<leader>cP", ":CompetiTest receive problem<CR>", { desc = "Create Problem" } },

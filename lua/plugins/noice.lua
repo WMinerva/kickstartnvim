@@ -6,6 +6,7 @@ return {
     },
     opts = {
         cmdline = {
+            -- view = "cmdline",
             opts = {
                 -- relative = 'editor',
                 position = { row = "10%", col = "50%" },
@@ -16,5 +17,7 @@ return {
                 enabled = false,
             },
         },
+        hover = { enabled = false },
+        signature = { enabled = false },
     },
 }

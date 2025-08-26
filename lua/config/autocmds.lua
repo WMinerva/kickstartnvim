@@ -10,7 +10,7 @@
 -- })
 
 -- require("base46").load_all_highlights()
-vim.cmd("Copilot disable")
+-- vim.cmd("Copilot disable")
 --return to last edit position when opening fikes
 vim.api.nvim_create_autocmd("BufReadPost", {
     desc = "Return to last edit position when opening files",
@@ -62,12 +62,15 @@ end
 -- end
 -- Highlight when yanking (copying) text
 -- highlight when yank text
+--
+-- require("nvconfig").base46.theme = "everforest"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
     callback = function()
-        vim.highlight.on_yank()
+        -- vim.highlight.on_yank()
+        vim.hl.on_yank()
     end,
 })
 

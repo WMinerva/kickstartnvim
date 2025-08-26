@@ -15,6 +15,10 @@ return {
     --     "nvim-lua/plenary.nvim",
     -- },
     opts = {
+        ui = { enable = false },
+        completion = {
+            blink = true,
+        },
         workspaces = {
             -- {
             --     name = "personal",

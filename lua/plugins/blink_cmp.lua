@@ -70,7 +70,14 @@ return {
                 -- window = { border = "single" },
             },
             menu = {
+                max_height = 15,
                 scrollbar = false,
+                draw = {
+                    columns = {
+                        { "kind_icon" },
+                        { "label", "label_description", "source_name", gap = 0 },
+                    },
+                },
                 -- border = "single",
             },
             ghost_text = { enabled = false },

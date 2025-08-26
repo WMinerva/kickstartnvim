@@ -4,7 +4,9 @@ return {
         ft = "markdown",
         ---@module 'render-markdown'
         ---@type render.md.UserConfig
-        opts = {},
+        opts = {
+            -- completions = { lsp = { enabled = true }, blink = { enabled = true } },
+        },
     },
     -- {
     --     "iamcco/markdown-preview.nvim",
