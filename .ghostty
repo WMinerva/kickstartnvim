@@ -1,0 +1,61 @@
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# background-opacity = 0.5
+adjust-cell-height = 10%
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-decoration = true
+
+window-save-state = always
+
+title = Ghostty
+quick-terminal-position = center
+window-title-font-family = Ghostty
+# theme = Everforest Dark - Hard
+cursor-invert-fg-bg = true
+cursor-style = block
+#
+foreground =                     #d3c6aa
+background =                     #333c43
+# background =                     #272e33
+selection-foreground =           #9da9a0
+selection-background =           #464e53
+
+cursor-color =                   #d3c6aa
+cursor-text =                    #2e383c
+
+palette = 0=#343f44
+palette = 1=#e67e80
+palette = 2=#a7c080
+palette = 3=#dbbc7f
+palette = 4=#7fbbb3
+palette = 5=#d699b6
+palette = 6=#83c092
+palette = 7=#859289
+palette = 8=#868d80
+palette = 9=#e67e80
+palette = 10=#a7c080
+palette = 11=#dbbc7f
+palette = 12=#7fbbb3
+palette = 13=#d699b6
+palette = 14=#83c092
+palette = 15=#9da9a0
+
+font-size = 13.0
+bold-is-bright = true
+
+font-family = "FiraCode Nerd Font Med"
+# font-family = "JetBrainsMono NF Medium"
+# font-family-bold = "FiraCode Nerd Font Mono Med"
+# font-family-italic = "JetBrains Nerd Font Italic"
+# font-family-bold-italic = "FiraCode Nerd Font Bold"
+#
+font-family-italic = "DepartureMono Nerd Font"
+# font-family-bold = FiraCode Nerd Font Medium
+# font-family-italic = FiraCode Nerd Font Medium
+# font-family-bold-italic = FiraCode Nerd Font Medium
+
+mouse-hide-while-typing = true
+gtk-titlebar = false
