@@ -10,6 +10,7 @@ vim.o.smarttab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
 vim.opt.conceallevel = 1
+vim.opt.cmdheight = 0
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
