@@ -29,8 +29,8 @@ return {
             position = "right",
         },
         storage = {
-            home = "~/Workspace/competitive_programming/leetcode/",
-            cache = "~/Workspace/competitive_programming/cache/",
+            home = "~/Workspace/leetcode/",
+            cache = "~/Workspace/",
         },
     },
     keys = {
