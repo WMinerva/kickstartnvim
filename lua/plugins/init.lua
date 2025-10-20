@@ -15,6 +15,11 @@ return {
             require("base46").load_all_highlights()
         end,
     },
+    -- "nvzone/minty",
+    -- cmd = { "Shades", "Huefy" },
+    -- dependencies = { "nvzone/volt", lazy = true },
+    { "nvzone/volt", lazy = true },
+
     {
         "nvim-tree/nvim-web-devicons",
         opts = function()
