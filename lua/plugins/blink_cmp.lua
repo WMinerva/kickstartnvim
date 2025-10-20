@@ -1,6 +1,6 @@
 return {
     "saghen/blink.cmp",
-    event = { "InsertEnter" },
+    event = { "InsertEnter", "CmdlineEnter" },
     -- optional: provides snippets for the snippet source
     dependencies = {
         "giuxtaposition/blink-cmp-copilot",
@@ -73,6 +73,7 @@ return {
                 max_height = 15,
                 scrollbar = false,
                 draw = {
+                    treesitter = { "lsp" },
                     columns = {
                         { "kind_icon" },
                         { "label", "label_description", "source_name", gap = 0 },
@@ -81,6 +82,23 @@ return {
                 -- border = "single",
             },
             ghost_text = { enabled = false },
+        },
+        cmdline = {
+            enabled = true,
+            keymap = {
+                preset = "cmdline",
+                ["<Right>"] = false,
+                ["<Left>"] = false,
+            },
+            completion = {
+                list = { selection = { preselect = false } },
+                menu = {
+                    auto_show = function(ctx)
+                        return vim.fn.getcmdtype() == ":"
+                    end,
+                },
+                ghost_text = { enabled = true },
+            },
         },
 
         -- Default list of enabled providers defined so that you can extend it
