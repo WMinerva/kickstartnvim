@@ -15,42 +15,54 @@ return {
     --     "nvim-lua/plenary.nvim",
     -- },
     opts = {
+        legacy_commands = false,
         ui = { enable = false },
         completion = {
             blink = true,
         },
         workspaces = {
-            -- {
-            --     name = "personal",
-            --     path = "~/",
-            -- },
             {
-                name = "workspace",
-                path = "~/Workspace/Notes/",
+                name = "notes",
+                path = "~/Notes/",
+            },
+            {
+                name = "work",
+                path = "~/Notes/work/",
+            },
+            {
+                name = "personal",
+                path = "~/Notes/personal/",
+            },
+            {
+                name = "universidad",
+                path = "~/Notes/universidad",
             },
         },
-        templates = {
-            folder = "Templates",
-            date_format = "%Y-%m-%d",
-            time_format = "%H:%M",
-            -- A map for custom variables, the key should be the variable and the value a function.
-            -- Functions are called with obsidian.TemplateContext objects as their sole parameter.
-            -- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#substitutions
-            substitutions = {},
-
-            -- A map for configuring unique directories and paths for specific templates
-            --- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#customizations
-            customizations = {},
+        attachments = {
+            img_folder = "~/Notes/assets/images", -- Imágenes en ~/Notes/Personal/assets/images
         },
+        -- templates = {
+        --     folder = " ~/Notes/Templates",
+        --     date_format = "%Y-%m-%d",
+        --     time_format = "%H:%M",
+        --     -- A map for custom variables, the key should be the variable and the value a function.
+        --     -- Functions are called with obsidian.TemplateContext objects as their sole parameter.
+        --     -- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#substitutions
+        --     substitutions = {},
+        --
+        --     -- A map for configuring unique directories and paths for specific templates
+        --     --- See: https://github.com/obsidian-nvim/obsidian.nvim/wiki/Template#customizations
+        --     customizations = {},
+        -- },
 
         -- see below for full list of options 👇
     },
     keys = {
         --Obsidian
-        { "<leader>on", ":ObsidianNew<CR> ", desc = "New Obsidian Note" },
-        { "<leader>ot", ":ObsidianTags<CR>", desc = "Obsidian Tags" },
-        { "<leader>os", ":ObsidianSearch<CR>", desc = "Obsidian Search" },
-        { "<leader>oo", ":ObsidianToggleCheckbox<CR>", desc = "Obsidian Toggle Checkbox" },
-        { "<leader>ox", ":ObsidianCheck<CR>", desc = "Obsidian Check" },
+        { "<leader>on", ":Obsidian new<CR> ", desc = "New Obsidian Note" },
+        { "<leader>ot", ":Obsidian tags<CR>", desc = "Obsidian Tags" },
+        { "<leader>os", ":Obsidian search<CR>", desc = "Obsidian Search" },
+        { "<leader>ow", ":Obsidian workspace<CR>", desc = "Obsidian Workspace" },
+        { "<leader>ox", ":Obsidian check<CR>", desc = "Obsidian Check" },
     },
 }
