@@ -20,6 +20,9 @@ return {
         completion = {
             blink = true,
         },
+        checkbox = {
+            order = { " ", "x" },
+        },
         workspaces = {
             {
                 name = "notes",
@@ -41,6 +44,15 @@ return {
         attachments = {
             img_folder = "~/Notes/assets/images", -- Imágenes en ~/Notes/Personal/assets/images
         },
+        note_frontmatter_func = function(note)
+            return {
+                id = note.id,
+                date = os.date("%m-%d-%Y"), -- Añade fecha actual
+                aliases = note.aliases,
+                tags = note.tags,
+                -- time = os.date("%H:%M:%S"), -- Añade hora actual
+            }
+        end,
         -- templates = {
         --     folder = " ~/Notes/Templates",
         --     date_format = "%Y-%m-%d",
