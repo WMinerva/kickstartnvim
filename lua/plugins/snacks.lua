@@ -142,6 +142,21 @@ return {
                 },
                 { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 3, padding = { 2, 1 } },
                 { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 3, padding = { 2, 1 } },
+                {
+                    pane = 2,
+                    icon = " ",
+                    title = "Git Status",
+                    section = "terminal",
+                    enabled = function()
+                        return Snacks.git.get_root() ~= nil
+                    end,
+                    -- cmd = "git status --short --branch --renames",
+                    cmd = "git --no-pager diff --stat -B -M -C",
+                    -- height = 10,
+                    padding = { 2, 1 },
+                    -- ttl = 5 * 60,
+                    indent = 3,
+                },
             },
         },
         notifier = { enabled = true, top_down = false, style = "compact" },
