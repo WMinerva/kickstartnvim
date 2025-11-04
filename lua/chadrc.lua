@@ -69,7 +69,7 @@ M.ui = {
     statusline = {
         theme = "vscode_colored",
         -- separator_style = "round",
-        order = { "mode", "file", "navic", "%=", "last_keys", "lsp_info", "git", "diagnostics", "progress", "cwd" },
+        order = { "mode", "file", "navic", "%=", "last_keys", "lsp_info", "progress", "cwd" },
         -- order = { "mode", "file","lsp", "lsp_msg", "%=", "git", "diagnostics", "cwd", "cursor" },
         modules = {
             navic = function()
@@ -83,7 +83,7 @@ M.ui = {
             end,
             last_keys = function()
                 -- return "%{reg_recording()}"
-                return vim.fn.reg_recording() ~= "" and "Recording: @ " .. vim.fn.reg_recording() or ""
+                return vim.fn.reg_recording() ~= "" and "Recording: @ " .. vim.fn.reg_recording() .. " " or ""
             end,
             -- get_capslock = function()
             --     local handle = io.popen("xset -q | grep 'Caps Lock' | awk '{print $4}'")
@@ -98,13 +98,13 @@ M.ui = {
             lsp_info = function()
                 local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
                 if #buf_clients == 0 then
-                    return "Inactive"
+                    return "Inactive "
                 end
                 local names = {}
                 for _, client in ipairs(buf_clients) do
                     table.insert(names, client.name)
                 end
-                return table.concat(names, ",")
+                return table.concat(names, ",") .. " "
             end,
         },
     },
