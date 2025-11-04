@@ -16,17 +16,19 @@ M.base46 = {
         -- WinBar = { bg = "NONE" },
         -- WinBarNC = { bg = "NONE" },
         St_porc = { fg = "dark_purple", bg = "statusline_bg" },
-        --BLink
+        --Blink
         BlinkCmpMenu = { bg = "black2" },
         BlinkCmpDoc = { bg = "darker_black" },
         --Snacks Picker
         SnacksPickerTitle = { bg = "red", fg = "black" },
+        -- SnacksPickerDesc = { bg = "green", fg = "black" },
+        -- SnacksPickerFile = { bg = "darker_black", fg = "white" },
         SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" },
         -- SnacksPickerBoxBorder = { bg = "black",fg = "black" },
         SnacksPickerInput = { bg = "darker_black" },
         -- SnacksPickerInputTitle = { bg = "black", fg = "black" },
-        -- SnacksPickerBoxTitle = { bg = "black", fg = "black" },
-        -- SnacksPickerPrompt = { fg = "red" },
+        -- SnacksPickerBoxTitle = { bg = "yellow", fg = "yellow" },
+        -- SnacksPickerPrompt = { fg = "red", bg = "yellow" },
         -- SnacksPickerInputSearch = { bg = "red", fg = "red" },
         SnacksPickerPreview = { bg = "darker_black" },
         SnacksPickerListCursorLine = { bg = "black2" },

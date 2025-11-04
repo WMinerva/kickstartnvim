@@ -1,3 +1,9 @@
+local my_projects = {
+    "~/Notes",
+    "~/Workspace",
+    "~/.local/share/com.nesbox.tic/TIC-80",
+    "~/.config/nvim",
+}
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -9,7 +15,6 @@ return {
             prompt = "  ",
             icons = {
                 tree = {
-
                     vertical = "│ ",
                     middle = "│ ",
                     last = "└╴",
@@ -117,6 +122,7 @@ return {
                     { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
                     { icon = " ", key = "p", desc = "Leet Code", action = ":Leet" },
                     { icon = " ", key = "c", desc = "Config", action = "<leader>fc" },
+                    -- { key = "d", action = ":project_picker", desc = "Mis Proyectos" },
                     -- { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
                     { icon = " ", key = "s", desc = "Restore Session", section = "session" },
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
@@ -133,6 +139,21 @@ return {
                     gap = 1,
                     padding = 1,
                 },
+                {
+                    -- pane = 2,
+                    icon = " ",
+                    desc = "Browse Repo",
+                    indent = 2,
+                    padding = 1,
+                    -- gap = 1,
+                    key = "b",
+                    enabled = function()
+                        return Snacks.git.get_root() ~= nil
+                    end,
+                    action = function()
+                        Snacks.gitbrowse()
+                    end,
+                },
                 { section = "startup" },
                 {
                     pane = 2,
@@ -141,7 +162,15 @@ return {
                     -- cmd = "colorscript -e 1",
                 },
                 { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 3, padding = { 2, 1 } },
-                { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 3, padding = { 2, 1 } },
+                {
+                    pane = 2,
+                    icon = " ",
+                    title = "Projects",
+                    section = "projects",
+                    dirs = my_projects,
+                    indent = 3,
+                    padding = { 2, 1 },
+                },
                 {
                     pane = 2,
                     icon = " ",
@@ -153,7 +182,7 @@ return {
                     -- cmd = "git status --short --branch --renames",
                     cmd = "git --no-pager diff --stat -B -M -C",
                     -- height = 10,
-                    padding = { 2, 1 },
+                    padding = 3,
                     -- ttl = 5 * 60,
                     indent = 3,
                 },
@@ -291,7 +320,10 @@ return {
         {
             "<leader>fp",
             function()
-                Snacks.picker.projects()
+                Snacks.picker.projects({
+                    projects = my_projects,
+                    recent = false,
+                })
             end,
             desc = "Projects",
         },
@@ -303,6 +335,13 @@ return {
             desc = "Recent",
         },
         -- git
+        {
+            "<leader>gt",
+            function()
+                Snacks.git.blame_line()
+            end,
+            desc = "Git Blame",
+        },
         {
             "<leader>gb",
             function()
