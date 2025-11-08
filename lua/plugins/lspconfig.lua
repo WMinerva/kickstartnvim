@@ -5,11 +5,11 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         { "mason-org/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        -- "WhoIsSethDaniel/mason-tool-installer.nvim",
         "neovim/nvim-lspconfig",
     },
     config = function()
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        -- local capabilities = vim.lsp.protocol.make_client_capabilities()
         local servers = {
             -- gdscript = {},
             -- clangd = {},
@@ -81,35 +81,37 @@ return {
         }
 
         -- require("mason").setup()
-
-        local ensure_installed = vim.tbl_keys(servers or {})
-        vim.list_extend(ensure_installed, {
-            "stylua", -- Used to format Lua code
-            "black",
-            -- "ruff",
-            -- "isort",
-        })
-        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+        --
+        -- local ensure_installed = vim.tbl_keys(servers or {})
+        -- vim.list_extend(ensure_installed, {
+        --     "stylua", -- Used to format Lua code
+        --     "black",
+        --     -- "ruff",
+        --     -- "isort",
+        -- })
+        -- require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
         require("mason-lspconfig").setup({
-            handlers = {
-                function(server_name)
-                    local server = servers[server_name] or {}
-
-                    -- This handles overriding only values explicitly passed
-                    server.on_attach = function(client, _)
-                        client.server_capabilities.semanticTokensProvider = nil
-                    end
-                    -- by the server configuration above. Useful when disabling
-                    -- certain features of an LSP (for example, turning off formatting for tsserver)
-                    server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                    if server_name ~= "jdtls" then
-                        -- require("lspconfig")[server_name].setup(server)
-                        vim.lsp.config(server_name, server)
-                        vim.lsp.enable(server_name)
-                    end
-                end,
-            },
+            -- handlers = {
+            --     function(server_name)
+            --         local server = servers[server_name] or {}
+            --
+            --         -- This handles overriding only values explicitly passed
+            --         server.on_attach = function(client, _)
+            --             client.server_capabilities.semanticTokensProvider = nil
+            --         end
+            --         -- by the server configuration above. Useful when disabling
+            --         -- certain features of an LSP (for example, turning off formatting for tsserver)
+            --         server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+            --         if server_name ~= "jdtls" then
+            --             -- require("lspconfig")[server_name].setup(server)
+            --             vim.lsp.config(server_name, server)
+            --             vim.lsp.enable(server_name)
+            --         end
+            --     end,
+            -- },
+            ensure_installed = servers,
+            automatic_enable = true,
         })
     end,
 }
