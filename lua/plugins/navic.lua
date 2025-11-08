@@ -22,6 +22,9 @@ return {
             require("incline").setup({
                 render = function(props)
                     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+                    -- local gitsigns = vim.b[vim.api.nvim_get_current_buf()].gitsigns_status_dict
+                    -- local branch_name = gitsigns and gitsigns.head or ""
+                    -- local branch_name = " " .. vim.b[vim.api.nvim_get_current_buf()].gitsigns_status_dict.head
                     if filename == "" then
                         filename = "[No Name]"
                     end
@@ -62,11 +65,11 @@ return {
                     end
 
                     return {
+                        -- { branch_name },
                         { get_git_diff() },
                         { (ft_icon or "") .. " ", guifg = ft_color, guibg = "none" },
                         { filename .. " ", gui = vim.bo[props.buf].modified and "bold,italic" or "bold" },
                         { get_diagnostic_label() },
-
                         -- { "┊  " .. vim.api.nvim_win_get_number(props.win), group = "DevIconWindows" },
                     }
                 end,

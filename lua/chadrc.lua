@@ -23,7 +23,7 @@ M.base46 = {
         SnacksPickerTitle = { bg = "red", fg = "black" },
         -- SnacksPickerDesc = { bg = "green", fg = "black" },
         -- SnacksPickerFile = { bg = "darker_black", fg = "white" },
-        SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" },
+        SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" }, --bordes
         -- SnacksPickerBoxBorder = { bg = "black",fg = "black" },
         SnacksPickerInput = { bg = "darker_black" },
         -- SnacksPickerInputTitle = { bg = "black", fg = "black" },
@@ -60,6 +60,7 @@ M.lsp = {
 M.ui = {
     tabufline = {
         enabled = true,
+        -- enabled = false,
     },
     -- cmp = {
     --     lspkind_text = true,
