@@ -1,16 +1,17 @@
 ---@diagnostic disable: missing-fields
 return {
-    "neovim/nvim-lspconfig",
+    "mason-org/mason-lspconfig.nvim",
     -- lazy = true,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         { "mason-org/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
-        "mason-org/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "neovim/nvim-lspconfig",
     },
     config = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         local servers = {
+            -- gdscript = {},
             -- clangd = {},
             -- gopls = {},
             bashls = {},
@@ -22,7 +23,7 @@ return {
             cssls = {},
             -- eslint = {},
             prettierd = {},
-            jdtls = {},
+            -- jdtls = {},
             -- rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             -- phpactor = {},
@@ -79,12 +80,13 @@ return {
             },
         }
 
-        require("mason").setup()
+        -- require("mason").setup()
 
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             "stylua", -- Used to format Lua code
             "black",
+            -- "ruff",
             -- "isort",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -102,7 +104,9 @@ return {
                     -- certain features of an LSP (for example, turning off formatting for tsserver)
                     server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
                     if server_name ~= "jdtls" then
-                        require("lspconfig")[server_name].setup(server)
+                        -- require("lspconfig")[server_name].setup(server)
+                        vim.lsp.config(server_name, server)
+                        vim.lsp.enable(server_name)
                     end
                 end,
             },
