@@ -18,6 +18,18 @@ map("n", "<leader>xq", vim.diagnostic.setloclist, { desc = "Open diagnostic Quic
 
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
+-- map("n", "K", vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 }), { desc = "Hover" })
+map("n", "K", function()
+    vim.lsp.buf.hover({
+        border = "none",
+        max_height = 40,
+        max_width = 90,
+        wrap = true,
+        wrap_at = 90,
+        close_events = { "CursorMoved", "BufLeave", "WinLeave", "LSPDetach" },
+    })
+end)
+map("n", "<C-k>", vim.lsp.buf.signature_help)
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 
 map("v", "J", ":m '>+1<CR>gv=gv", opts)

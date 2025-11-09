@@ -67,7 +67,7 @@ return {
         completion = {
             documentation = {
                 auto_show = true,
-                -- window = { border = "single" },
+                window = { border = "none" },
             },
             menu = {
                 max_height = 15,
@@ -79,7 +79,7 @@ return {
                         { "label", "label_description", "source_name", gap = 0 },
                     },
                 },
-                -- border = "single",
+                border = "none",
             },
             ghost_text = { enabled = false },
         },

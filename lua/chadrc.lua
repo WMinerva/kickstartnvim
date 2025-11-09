@@ -24,7 +24,7 @@ M.base46 = {
         -- SnacksPickerDesc = { bg = "green", fg = "black" },
         -- SnacksPickerFile = { bg = "darker_black", fg = "white" },
         SnacksPickerBorder = { bg = "darker_black", fg = "darker_black" }, --bordes
-        -- SnacksPickerBoxBorder = { bg = "black",fg = "black" },
+        -- SnacksPickerBoxBorder = { bg = "black", fg = "black" },
         SnacksPickerInput = { bg = "darker_black" },
         -- SnacksPickerInputTitle = { bg = "black", fg = "black" },
         -- SnacksPickerBoxTitle = { bg = "yellow", fg = "yellow" },
@@ -37,9 +37,9 @@ M.base46 = {
         WhichKeyTitle = { bg = "baby_pink", fg = "black" },
         -- WhichKeyBorder = { bg = "darker_black", fg = "darker_black" },
         --Noice
-        NoiceCmdlinePopupTitleCmdline = { bg = "green", fg = "black" },
-        NoiceCmdlinePopupTitleLua = { bg = "green", fg = "black" },
-        NoiceCmdlinePopupTitleSearch = { bg = "yellow", fg = "black" },
+        -- NoiceCmdlinePopupTitleCmdline = { bg = "green", fg = "black" },
+        -- NoiceCmdlinePopupTitleLua = { bg = "green", fg = "black" },
+        -- NoiceCmdlinePopupTitleSearch = { bg = "yellow", fg = "black" },
         --Snacks Notifier
         SnacksNotifierTitleWarn = { bg = "yellow", fg = "black" },
         -- SnacksNotifierBorderWarn = { bg = "black" },
