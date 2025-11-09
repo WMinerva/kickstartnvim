@@ -55,7 +55,7 @@ M.base46 = {
     -- lsp_semantic_tokens = false,
 }
 M.lsp = {
-    signature = true,
+    signature = false,
 }
 M.ui = {
     tabufline = {

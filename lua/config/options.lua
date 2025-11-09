@@ -78,6 +78,7 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = false
 vim.o.laststatus = 3
+vim.o.winborder = "none"
 -- vim.opt.winbar = "%=%m %t"
 -- vim.opt.winbar = "%=%m %t"
 -- local navic = require("nvim-navic")
