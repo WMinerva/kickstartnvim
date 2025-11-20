@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields
 return {
     "mason-org/mason-lspconfig.nvim",
     -- lazy = true,
@@ -11,6 +10,7 @@ return {
     config = function()
         -- local capabilities = vim.lsp.protocol.make_client_capabilities()
         local ensure_installed = {
+            "gdscript",
             "lua_ls",
             "stylua", -- Used to format Lua code
             "bashls",
@@ -22,12 +22,11 @@ return {
             "prettier",
             "prettierd",
             "jdtls",
-            -- "gdtoolkit",
+            "gdtoolkit",
         }
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
         require("mason-lspconfig").setup({
             ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-            -- ensure_installed = { "bashls", "shellcheck", "shfmt", "pyright", "ruff", "prettierd" },
             automatic_enable = true,
         })
     end,

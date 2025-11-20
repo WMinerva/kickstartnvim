@@ -3,19 +3,22 @@ local opts = { noremap = true, silent = true }
 --  See `:help map()`
 --
 map("n", "<S-l>", vim.cmd.bnext, opts)
-map("n", "<tab>", function()
-    require("nvchad.tabufline").next()
-end, { desc = "buffer goto next" })
+map("n", "<tab>", vim.cmd.bnext, opts)
+-- map("n", "<tab>", function()
+--     require("nvchad.tabufline").next()
+-- end, { desc = "buffer goto next" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>qq", ":q<CR>", { desc = "Quit" })
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w!<cr><esc>", { desc = "Save File" })
 -- Diagnostic keymaps
 map("n", "<leader>xq", vim.diagnostic.setloclist, { desc = "Open diagnostic Quickfix list" })
-
+map("n", "{q", vim.cmd.cprev, { desc = "Previous Quickfix" })
+map("n", "}q", vim.cmd.cnext, { desc = "Next Quickfix" })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
 
+map("n", "<leader>te", ":TSEnable highlight<cr>", { desc = "Treesiter Enable" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
 -- map("n", "K", vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 }), { desc = "Hover" })
@@ -31,6 +34,9 @@ map("n", "K", function()
 end)
 map("n", "<C-k>", vim.lsp.buf.signature_help)
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+if vim.lsp.inlay_hint then
+    Snacks.toggle.inlay_hints():map("<leader>uh")
+end
 
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)

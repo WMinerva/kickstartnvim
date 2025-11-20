@@ -28,10 +28,18 @@ return {
                     if filename == "" then
                         filename = "[No Name]"
                     end
+                    -- if vim.bo[props.buf].modified then
+                    --     filename = filename .. " [+]"
+                    -- end
                     local ft_icon, ft_color = devicons.get_icon_color(filename)
 
                     local function get_git_diff()
                         local icons = { removed = " ", changed = " ", added = " " }
+                        local git_palette = {
+                            added = "#83c092",
+                            changed = "#dbbc7f",
+                            removed = "#e67e80",
+                        }
                         local signs = vim.b[props.buf].gitsigns_status_dict
                         local labels = {}
                         if signs == nil then
@@ -39,7 +47,12 @@ return {
                         end
                         for name, icon in pairs(icons) do
                             if tonumber(signs[name]) and signs[name] > 0 then
-                                table.insert(labels, { icon .. signs[name] .. " ", group = "Diff" .. name })
+                                table.insert(labels, {
+                                    icon .. signs[name] .. " ",
+                                    guifg = git_palette[name],
+                                    guibg = "none",
+                                    -- group = "Diff" .. name,
+                                })
                             end
                         end
                         if #labels > 0 then
@@ -67,8 +80,10 @@ return {
                     return {
                         -- { branch_name },
                         { get_git_diff() },
+                        -- { ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = "none" } or "", " " },
                         { (ft_icon or "") .. " ", guifg = ft_color, guibg = "none" },
                         { filename .. " ", gui = vim.bo[props.buf].modified and "bold,italic" or "bold" },
+                        -- { filename or "" },
                         { get_diagnostic_label() },
                         -- { "┊  " .. vim.api.nvim_win_get_number(props.win), group = "DevIconWindows" },
                     }

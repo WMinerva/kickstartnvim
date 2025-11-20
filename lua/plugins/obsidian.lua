@@ -11,9 +11,10 @@ return {
     version = "*", -- recommended, use latest release instead of latest commit
     -- lazy = false,
     ft = "markdown",
-    -- dependencies = {
-    --     "nvim-lua/plenary.nvim",
-    -- },
+    dependencies = {
+        -- "nvim-lua/plenary.nvim",
+        -- "obsidian-nvim/cosma.nvim",
+    },
     opts = {
         legacy_commands = false,
         ui = { enable = false },

@@ -47,6 +47,9 @@ M.base46 = {
         -- SnacksNotifierBorderInfo = { bg = "red" },
         SnacksNotifierTitleError = { bg = "red", fg = "black" },
         -- SnacksNotifierHistoryTitle = { bg = "red", fg = "black" },
+        -- DevIconlua = { fg = "red" },
+        -- InclineNormal = { fg = "black", bg = "green" },
+        -- INclineNormalNC = { bg = "green" },
     },
     integrations = {
         "navic",
@@ -55,11 +58,17 @@ M.base46 = {
     -- lsp_semantic_tokens = false,
 }
 M.lsp = {
-    signature = false,
+    signature = true,
+}
+M.colorify = {
+    enabled = true,
+    mode = "virtual", -- fg, bg, virtual
+    virt_text = "󱓻 ",
+    highlight = { hex = true, lspvars = true },
 }
 M.ui = {
     tabufline = {
-        enabled = true,
+        enabled = false,
         -- enabled = false,
     },
     -- cmp = {
