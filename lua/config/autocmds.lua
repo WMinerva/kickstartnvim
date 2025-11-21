@@ -1,4 +1,11 @@
 --  See `:help lua-guide-autocommands`
+vim.fn.sign_define("DebugPrintMark", {
+    text = "◆", -- icono que quieras
+    texthl = "Comment", -- color
+    numhl = "",
+    linehl = "",
+})
+
 --Nvum tree auto close
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --     nested = true,

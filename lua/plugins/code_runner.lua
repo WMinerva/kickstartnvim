@@ -20,8 +20,9 @@ return {
             focus = true,
             startinsert = true,
             term = {
-                position = "vert",
-                size = 50,
+                -- position = "vert",
+                position = "horiz",
+                -- size = 50,
             },
         })
     end,
