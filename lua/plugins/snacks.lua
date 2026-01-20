@@ -3,7 +3,8 @@ local my_projects = {
     "~/Workspace",
     "~/.local/share/com.nesbox.tic/TIC-80",
     "~/.config/nvim",
-    "~/ambidextro/",
+    "~/Projects",
+    "~/Documentos/Apuntes_Bash",
 }
 return {
     "folke/snacks.nvim",
