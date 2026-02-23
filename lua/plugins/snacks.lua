@@ -216,7 +216,7 @@ return {
             "<leader>e",
             function()
                 Snacks.picker.explorer({
-                    cwd = vim.fn.expand("%:p:h"),
+                    -- cwd = vim.fn.expand("%:p:h"),
                     layout = {
 
                         -- preset = "vscode",
@@ -235,7 +235,7 @@ return {
             "<leader>fe",
             function()
                 Snacks.picker.explorer({
-                    cwd = vim.fn.expand("%:p:h"),
+                    -- cwd = vim.fn.expand("%:p:h"),
                     layout = {
                         preview = true,
                         layout = {
@@ -309,7 +309,9 @@ return {
         {
             "<leader>ff",
             function()
-                Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") })
+                Snacks.picker.files(
+                    -- { cwd = vim.fn.expand("%:p:h") }
+                )
             end,
             desc = "Find Files",
         },

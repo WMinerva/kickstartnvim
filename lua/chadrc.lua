@@ -68,7 +68,7 @@ M.colorify = {
 }
 M.ui = {
     tabufline = {
-        enabled = false,
+        enabled = true,
         -- enabled = false,
     },
     -- cmp = {

@@ -34,6 +34,7 @@ return {
             end,
             formatters_by_ft = {
                 gdscript = { "gdformat" },
+                -- gdscript = { "gdtoolkit" },
                 bash = { "shfmt" },
                 sh = { "shfmt" },
                 lua = { "stylua" },
