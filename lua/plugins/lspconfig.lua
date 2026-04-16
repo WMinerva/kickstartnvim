@@ -14,6 +14,7 @@ return {
                 "bashls",
                 "pyright",
                 "jdtls",
+                "clangd",
                 -- "shellcheck",
                 -- "shfmt",
                 -- "black",

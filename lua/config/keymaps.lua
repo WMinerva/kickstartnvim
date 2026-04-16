@@ -18,7 +18,7 @@ map("n", "}q", vim.cmd.cnext, { desc = "Next Quickfix" })
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
 
-map("n", "<leader>te", ":TSEnable highlight<cr>", { desc = "Treesiter Enable" })
+-- map("n", "<leader>te", ":TSEnable highlight<cr>", { desc = "Treesiter Enable" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- map("n", "<leader>fb", vim.lsp.buf.format, { desc = "Format Buffer" })
 -- map("n", "K", vim.lsp.buf.hover({ border = "single", max_height = 25, max_width = 120 }), { desc = "Hover" })

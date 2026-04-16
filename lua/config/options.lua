@@ -64,7 +64,6 @@ vim.opt.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -108,9 +107,21 @@ vim.keymap.set("n", "<leader>uw", function()
     end
 end, { desc = "Toggle Wrap" })
 
-local signs = { Error = "", Warn = "", Hint = "󱠂", Info = "" }
+vim.diagnostic.config({
+    virtual_lines = { current_line = true },
+    signs = {
+        text = {
+            [vim.diagnostic.severity.WARN] = " ", -- Change warning sign
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.HINT] = " 󱠂",
+            [vim.diagnostic.severity.INFO] = " ",
+        },
+    },
+})
 
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+-- local signs = { Error = "", Warn = "", Hint = "󱠂", Info = "" }
+
+-- for type, icon in pairs(signs) do
+--     local hl = "DiagnosticSign" .. type
+--     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+-- end

@@ -216,7 +216,7 @@ return {
             "<leader>e",
             function()
                 Snacks.picker.explorer({
-                    -- cwd = vim.fn.expand("%:p:h"),
+                    cwd = vim.fn.expand("%:p:h"),
                     layout = {
 
                         -- preset = "vscode",
