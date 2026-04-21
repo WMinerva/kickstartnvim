@@ -6,6 +6,7 @@ return {
     opts = {
         runner_ui = {
             interface = "split",
+            -- interface = "popup",
         },
         -- testcases_directory = "$(CWD)/Workspace/testcases/",
         -- testcases_directory = "/Workspace/testcases/",

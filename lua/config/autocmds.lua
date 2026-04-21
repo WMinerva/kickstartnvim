@@ -1,3 +1,48 @@
+-- local group = vim.api.nvim_create_augroup("CompetitestUI", { clear = true })
+--
+-- local function is_competitest_buffer(buf)
+--     return pcall(vim.api.nvim_buf_get_var, buf, "competitest_title")
+-- end
+--
+-- vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+--     group = group,
+--     callback = function()
+--         local buf = vim.api.nvim_get_current_buf()
+--
+--         if is_competitest_buffer(buf) then
+--             -- 🔥 activar statusline por split
+--             vim.o.laststatus = 2
+--
+--             local ok, title = pcall(vim.api.nvim_buf_get_var, buf, "competitest_title")
+--
+--             if ok then
+--                 local map = {
+--                     tc = "Testcases",
+--                     si = "Input",
+--                     so = "Output",
+--                     eo = "Expected Output",
+--                     se = "Error",
+--                 }
+--
+--                 local label = map[title] or title
+--
+--                 -- 🔥 statusline minimalista
+--                 vim.opt_local.statusline = "%=%#Title# " .. label .. " %="
+--             end
+--         else
+--             -- 🔎 verificar si aún hay ventanas de competitest
+--             for _, win in ipairs(vim.api.nvim_list_wins()) do
+--                 local b = vim.api.nvim_win_get_buf(win)
+--                 if is_competitest_buffer(b) then
+--                     return -- aún hay → no cambiar
+--                 end
+--             end
+--
+--             -- 🔥 volver a global
+--             vim.o.laststatus = 3
+--         end
+--     end,
+-- })
 --  See `:help lua-guide-autocommands`
 vim.fn.sign_define("DebugPrintMark", {
     text = "◆", -- icono que quieras
@@ -6,18 +51,9 @@ vim.fn.sign_define("DebugPrintMark", {
     linehl = "",
 })
 
---Nvum tree auto close
--- vim.api.nvim_create_autocmd("BufEnter", {
---     nested = true,
---     callback = function()
---         if #vim.api.nvim_list_bufs() == 1 and vim.bo.filetype == "NvimTree_1" then
---             vim.cmd("quit")
---         end
---     end,
--- })
-
 -- require("base46").load_all_highlights()
 -- vim.cmd("Copilot disable")
+
 --return to last edit position when opening fikes
 vim.api.nvim_create_autocmd("BufReadPost", {
     desc = "Return to last edit position when opening files",
