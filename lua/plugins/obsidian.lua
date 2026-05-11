@@ -1,5 +1,4 @@
 return {
-    -- "epwalsh/obsidian.nvim",
     "obsidian-nvim/obsidian.nvim",
     cmd = {
         "ObsidianNew",
@@ -12,10 +11,48 @@ return {
     -- lazy = false,
     ft = "markdown",
     dependencies = {
-        -- "nvim-lua/plenary.nvim",
         -- "obsidian-nvim/cosma.nvim",
     },
     opts = {
+        note_id_func = function(title)
+            if title ~= nil then
+                -- reemplaza espacios por guiones
+                return title:gsub(" ", "-")
+            else
+                -- fallback si no hay título
+                return tostring(os.time())
+            end
+        end,
+        frontmatter = {
+            func = function(note)
+                -- local months = {
+                --     "enero",
+                --     "febrero",
+                --     "marzo",
+                --     "abril",
+                --     "mayo",
+                --     "junio",
+                --     "julio",
+                --     "agosto",
+                --     "septiembre",
+                --     "octubre",
+                --     "noviembre",
+                --     "diciembre",
+                -- }
+
+                -- local month = months[tonumber(os.date("%m"))]
+                local out = {
+                    id = note.id,
+                    aliases = note.aliases,
+                    tags = note.tags,
+                    -- tags = { month },
+                    -- date = os.date("%d-%m-%Y"),
+                    date = os.date("%b %d %Y"),
+                }
+
+                return out
+            end,
+        },
         legacy_commands = false,
         ui = { enable = false },
         completion = {
@@ -41,10 +78,18 @@ return {
                 name = "universidad",
                 path = "~/Notes/universidad",
             },
+            {
+                name = "dont-starve-together",
+                path = "~/Notes/dont-starve-together/",
+            },
         },
-        attachments = {
-            folder = "~/Notes/assets/images", -- Imágenes en ~/Notes/Personal/assets/images
-        },
+        -- templates = {
+        --     folder = "templates",
+        -- },
+
+        -- attachments = {
+        --     folder = "~/Notes/assets/images", -- Imágenes en ~/Notes/Personal/assets/images
+        -- },
     },
     keys = {
         --Obsidian
@@ -53,5 +98,6 @@ return {
         { "<leader>os", ":Obsidian search<CR>", desc = "Obsidian Search" },
         { "<leader>ow", ":Obsidian workspace<CR>", desc = "Obsidian Workspace" },
         { "<leader>ox", ":Obsidian check<CR>", desc = "Obsidian Check" },
+        { "<leader>or", ":Obsidian rename<CR>", desc = "Obsidian Rename" },
     },
 }

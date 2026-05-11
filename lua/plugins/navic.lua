@@ -13,6 +13,10 @@ return {
         end,
     },
     {
+        "ankushbhagats/match.nvim",
+        config = true,
+    },
+    {
         "b0o/incline.nvim",
         -- opts = {},
         event = "BufAdd",

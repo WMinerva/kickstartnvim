@@ -5,7 +5,7 @@ return {
         build = ":Copilot auth",
         event = "BufReadPost",
         opts = {
-            suggestion = { enabled = false },
+            suggestion = { enabled = true },
             panel = { enabled = false },
             filetypes = {
                 markdown = true,
