@@ -1,3 +1,3 @@
 return {
-    "EddyBer16/pseint.vim",
+    -- "EddyBer16/pseint.vim",
 }

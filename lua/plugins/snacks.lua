@@ -1,5 +1,5 @@
 local my_projects = {
-    "~/Notes",
+    "/mnt/c/Users/nicol/OneDrive/Documentos/Notes/",
     "~/Workspace",
     "~/.local/share/com.nesbox.tic/TIC-80",
     "~/.config/nvim",

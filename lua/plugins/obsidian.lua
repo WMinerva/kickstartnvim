@@ -64,24 +64,24 @@ return {
         workspaces = {
             {
                 name = "notes",
-                path = "~/Notes/",
+                path = "/mnt/c/Users/nicol/OneDrive/Documentos/game docs/",
             },
-            {
-                name = "work",
-                path = "~/Notes/work/",
-            },
-            {
-                name = "personal",
-                path = "~/Notes/personal/",
-            },
-            {
-                name = "universidad",
-                path = "~/Notes/universidad",
-            },
-            {
-                name = "dont-starve-together",
-                path = "~/Notes/dont-starve-together/",
-            },
+            -- {
+            --     name = "work",
+            --     path = "~/Notes/work/",
+            -- },
+            -- {
+            --     name = "personal",
+            --     path = "~/Notes/personal/",
+            -- },
+            -- {
+            --     name = "universidad",
+            --     path = "~/Notes/universidad",
+            -- },
+            -- {
+            --     name = "dont-starve-together",
+            --     path = "~/Notes/dont-starve-together/",
+            -- },
         },
         -- templates = {
         --     folder = "templates",
