@@ -25,22 +25,6 @@ return {
         end,
         frontmatter = {
             func = function(note)
-                -- local months = {
-                --     "enero",
-                --     "febrero",
-                --     "marzo",
-                --     "abril",
-                --     "mayo",
-                --     "junio",
-                --     "julio",
-                --     "agosto",
-                --     "septiembre",
-                --     "octubre",
-                --     "noviembre",
-                --     "diciembre",
-                -- }
-
-                -- local month = months[tonumber(os.date("%m"))]
                 local out = {
                     id = note.id,
                     aliases = note.aliases,
@@ -49,39 +33,22 @@ return {
                     -- date = os.date("%d-%m-%Y"),
                     date = os.date("%b %d %Y"),
                 }
-
                 return out
             end,
         },
         legacy_commands = false,
         ui = { enable = false },
-        completion = {
-            blink = true,
-        },
+        -- completion = {
+        --     blink = true,
+        -- },
         checkbox = {
             order = { " ", "x" },
         },
         workspaces = {
             {
                 name = "notes",
-                path = "/mnt/c/Users/nicol/OneDrive/Documentos/game docs/",
+                path = "/mnt/c/Users/nicol/Documentos/Notes/",
             },
-            -- {
-            --     name = "work",
-            --     path = "~/Notes/work/",
-            -- },
-            -- {
-            --     name = "personal",
-            --     path = "~/Notes/personal/",
-            -- },
-            -- {
-            --     name = "universidad",
-            --     path = "~/Notes/universidad",
-            -- },
-            -- {
-            --     name = "dont-starve-together",
-            --     path = "~/Notes/dont-starve-together/",
-            -- },
         },
         -- templates = {
         --     folder = "templates",

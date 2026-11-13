@@ -196,6 +196,9 @@ return {
         statuscolumn = { enabled = true },
         -- input = { enabled = true },
         words = { enabled = true },
+        image = {
+            enabled = true,
+        },
     },
     keys = {
         {

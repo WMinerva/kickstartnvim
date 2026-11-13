@@ -8,11 +8,11 @@ return {
             -- completions = { lsp = { enabled = true }, blink = { enabled = true } },
         },
     },
-    {
-        "techwizrd/render-latex.nvim",
-        ft = "markdown",
-        opts = {},
-    },
+    -- {
+    --     "techwizrd/render-latex.nvim",
+    --     ft = "markdown",
+    --     opts = {},
+    -- },
     -- {
     --     "iamcco/markdown-preview.nvim",
     --     ft = "markdown",
